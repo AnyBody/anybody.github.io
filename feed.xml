@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-06-15T23:16:04+02:00</updated><id>https://anyscript.org/</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">AMMR now has a DOI</title><link href="https://anyscript.org/news/DOI/" rel="alternate" type="text/html" title="AMMR now has a DOI" /><published>2018-06-15T00:00:00+02:00</published><updated>2018-06-15T00:00:00+02:00</updated><id>https://anyscript.org/news/DOI</id><content type="html" xml:base="https://anyscript.org/news/DOI/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Digital_object_identifier&quot;&gt;Digital Object Identifiers&lt;/a&gt; (DOIs) are
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-06-15T23:27:48+02:00</updated><id>https://anyscript.org/</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">AMMR now has a DOI</title><link href="https://anyscript.org/news/DOI/" rel="alternate" type="text/html" title="AMMR now has a DOI" /><published>2018-06-15T00:00:00+02:00</published><updated>2018-06-15T00:00:00+02:00</updated><id>https://anyscript.org/news/DOI</id><content type="html" xml:base="https://anyscript.org/news/DOI/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Digital_object_identifier&quot;&gt;Digital Object Identifiers&lt;/a&gt; (DOIs) are
 the foundation of references and metrics in the world of academia. With the release
 of AMMR 2.1.1, we have added a DOI to the AMMR:&lt;/p&gt;
 
@@ -24,19 +24,42 @@ The AMMR record on Zenodo
  specific version of the AMMR. Luckily, Zenodo &lt;a href=&quot;http://blog.zenodo.org/2017/05/30/doi-versioning-launched/&quot;&gt;supports DOI versioning&lt;/a&gt;, and
  every version of the AMMR has their own DOI.&lt;/p&gt;
 
-&lt;p&gt;| Version       |           DOI                                                    |    ReleaseData    |
-| ——        | —————————————————————- | —————– | 
-| All versions  | 
-&lt;a href=&quot;https://doi.org/10.5281/zenodo.1250764&quot;&gt;&lt;img src=&quot;https://zenodo.org/badge/DOI/10.5281/zenodo.1250764.svg&quot; alt=&quot;DOI&quot; /&gt;&lt;/a&gt;.
-    |                   |
-| AMMR-2.1.1    | 
-  | June 12, 2018     |
-| AMMR-2.1.0    | 
-  | March 25, 2018    |
-| AMMR-2.0.0    | 
-  | November 30, 2017 |
-| AMMR-1.6.6    | 
-  | March 13, 2017    |&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Version&lt;/th&gt;
+      &lt;th&gt;DOI&lt;/th&gt;
+      &lt;th&gt;ReleaseData&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;All versions&lt;/td&gt;
+      &lt;td&gt;10.5281/zenodo.125076&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AMMR-2.1.1&lt;/td&gt;
+      &lt;td&gt;10.5281/zenodo.1287730&lt;/td&gt;
+      &lt;td&gt;June 12, 2018&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AMMR-2.1.0&lt;/td&gt;
+      &lt;td&gt;10.5281/zenodo.125127&lt;/td&gt;
+      &lt;td&gt;March 25, 2018&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AMMR-2.0.0&lt;/td&gt;
+      &lt;td&gt;10.5281/zenodo.1251274&lt;/td&gt;
+      &lt;td&gt;November 30, 2017&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AMMR-1.6.6&lt;/td&gt;
+      &lt;td&gt;10.5281/zenodo.1250765&lt;/td&gt;
+      &lt;td&gt;March 13, 2017&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;See also:&lt;/strong&gt; The complete &lt;a href=&quot;https://zenodo.org/search?page=1&amp;amp;size=20&amp;amp;q=conceptrecid:%221250764%22&amp;amp;sort=-publication_date&amp;amp;all_versions=True&quot;&gt;list of releases on Zenodo&lt;/a&gt;.&lt;/p&gt;
 
@@ -64,9 +87,9 @@ also essential for traceability.&lt;/p&gt;
 
 &lt;/div&gt;
 
-&lt;h3 id=&quot;dois-for-all-research-output&quot;&gt;DOIs for all research output&lt;/h3&gt;
+&lt;h3 id=&quot;more-research-output&quot;&gt;More research output&lt;/h3&gt;
 
-&lt;p&gt;The AMMR is just one of the first things we have added to&lt;/p&gt;</content><author><name>Morten Enemark Lund</name></author><category term="AMMR" /><category term="Models" /><summary type="html">We have added a DOI for the AMMR repository. This will help user users communicate which version of the AMMR they are using, and make it easy to cite the AMMR.</summary></entry><entry><title type="html">What is new AMMR 2.0</title><link href="https://anyscript.org/news/ammr-2.0/" rel="alternate" type="text/html" title="What is new AMMR 2.0" /><published>2017-11-29T00:00:00+01:00</published><updated>2017-11-29T00:00:00+01:00</updated><id>https://anyscript.org/news/ammr-2.0</id><content type="html" xml:base="https://anyscript.org/news/ammr-2.0/">&lt;p&gt;Join us for the launch of version 7.1 of our musculoskeletal simulation software - The AnyBody Modeling System, and a new version of the AnyBody Model repository (AMMR 2.0).&lt;/p&gt;
+&lt;p&gt;You can find more research output from AnyBody Technology on the &lt;a href=&quot;https://zenodo.org/communities/anybody&quot;&gt;AnyBodyTech Zenodo community page&lt;/a&gt;.&lt;/p&gt;</content><author><name>Morten Enemark Lund</name></author><category term="AMMR" /><category term="Models" /><summary type="html">We have added a DOI for the AMMR repository. This will help user users communicate which version of the AMMR they are using, and make it easy to cite the AMMR.</summary></entry><entry><title type="html">What is new AMMR 2.0</title><link href="https://anyscript.org/news/ammr-2.0/" rel="alternate" type="text/html" title="What is new AMMR 2.0" /><published>2017-11-29T00:00:00+01:00</published><updated>2017-11-29T00:00:00+01:00</updated><id>https://anyscript.org/news/ammr-2.0</id><content type="html" xml:base="https://anyscript.org/news/ammr-2.0/">&lt;p&gt;Join us for the launch of version 7.1 of our musculoskeletal simulation software - The AnyBody Modeling System, and a new version of the AnyBody Model repository (AMMR 2.0).&lt;/p&gt;
 
 &lt;p&gt;In this webcast, Morten Enemark Lund, R&amp;amp;D Engineer at AnyBody Technology, will the new software features and the exciting new model repository which is shipped with version 7.1.&lt;/p&gt;
 
