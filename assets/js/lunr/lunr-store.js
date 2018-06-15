@@ -64,8 +64,8 @@ var store = [{
         "tags": ["AMMR","Models"],
         "url": "https://anyscript.org/news/ammr-2.0/",
         "teaser":"https://anyscript.org/assets/images/posts/ammr2_teaser.png"},{
-        "title": "Model repository with a DOI",
-        "excerpt":"Digital Object Identifiers (DOI) arethe foundation of academic references. With the release of AMMR 2.1.1, we haveadded a DOI to the AMMR. The DOIs for the AMMR is handled by Zenodo, which isan European Open Science platform hosted at CERN. The DOI above always links to the newest version of...","categories": ["news"],
+        "title": "AMMR now has a DOI",
+        "excerpt":"Digital Object Identifiers (DOI) arethe foundation of references and metrics in the academic world. With the releaseof AMMR 2.1.1, we have added a DOI to the AMMR.The DOIs for the AMMR is handled by Zenodo, which isan European Open Science platform hosted at CERN. The AMMR record on ZenodoArchived versions...","categories": ["news"],
         "tags": ["AMMR","Models"],
         "url": "https://anyscript.org/news/DOI/",
         "teaser":"https://anyscript.org/assets/images/posts/doi_teaser.png"}]

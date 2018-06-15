@@ -1,15 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-06-15T15:32:33+02:00</updated><id>https://anyscript.org/</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Model repository with a DOI</title><link href="https://anyscript.org/news/DOI/" rel="alternate" type="text/html" title="Model repository with a DOI" /><published>2018-06-15T00:00:00+02:00</published><updated>2018-06-15T00:00:00+02:00</updated><id>https://anyscript.org/news/DOI</id><content type="html" xml:base="https://anyscript.org/news/DOI/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Digital_object_identifier&quot;&gt;Digital Object Identifiers&lt;/a&gt; (DOI) are
-the foundation of academic references. With the release of AMMR 2.1.1, we have
-added a DOI to the AMMR.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://doi.org/10.5281/zenodo.1250764&quot;&gt;&lt;img src=&quot;https://zenodo.org/badge/DOI/10.5281/zenodo.1250764.svg&quot; alt=&quot;DOI&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The DOIs for the AMMR is handled by &lt;a href=&quot;http://about.zenodo.org/&quot;&gt;Zenodo&lt;/a&gt;, which is
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-06-15T16:03:33+02:00</updated><id>https://anyscript.org/</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">AMMR now has a DOI</title><link href="https://anyscript.org/news/DOI/" rel="alternate" type="text/html" title="AMMR now has a DOI" /><published>2018-06-15T00:00:00+02:00</published><updated>2018-06-15T00:00:00+02:00</updated><id>https://anyscript.org/news/DOI</id><content type="html" xml:base="https://anyscript.org/news/DOI/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Digital_object_identifier&quot;&gt;Digital Object Identifiers&lt;/a&gt; (DOI) are
+the foundation of references and metrics in the academic world. With the release
+of AMMR 2.1.1, we have added a DOI to the AMMR
+&lt;a href=&quot;https://doi.org/10.5281/zenodo.1250764&quot;&gt;&lt;img src=&quot;https://zenodo.org/badge/DOI/10.5281/zenodo.1250764.svg&quot; alt=&quot;DOI&quot; /&gt;&lt;/a&gt;.
+The DOIs for the AMMR is handled by &lt;a href=&quot;http://about.zenodo.org/&quot;&gt;Zenodo&lt;/a&gt;, which is
 an European Open Science platform hosted at &lt;a href=&quot;https://home.cern/&quot;&gt;CERN&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://zenodo.org/&quot; class=&quot;align-center&quot;&gt;&lt;img src=&quot;/assets/images/posts/DOI_zenodo-gradient-round.svg&quot; alt=&quot;Foo&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figure&gt;
+  
+&lt;a href=&quot;https://zenodo.org/record/1287730&quot;&gt;&lt;img src=&quot;/assets/images/posts/doi_ammr_zendo.png&quot; alt=&quot;AMMR on Zenodo&quot; /&gt;&lt;/a&gt;
 
-&lt;p&gt;The DOI above always links to the newest version of the AMMR. That is called a concept DOI, and is useful if you want to cite all version of the AMMR. However, the AMMR is updated regularly, and we would often like to cite a specific version of the AMMR. Luckily, Zenodo &lt;a href=&quot;http://blog.zenodo.org/2017/05/30/doi-versioning-launched/&quot;&gt;supports DOI versioning&lt;/a&gt;, and every version of the AMMR has their own DOI.&lt;/p&gt;
+  &lt;figcaption&gt;
+The AMMR record on Zenodo
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;archived-versions&quot;&gt;Archived versions&lt;/h3&gt;
+
+&lt;p&gt;The DOI above always links to the newest version of the AMMR. That is called a
+ concept DOI, and is useful if you want to cite all version of the AMMR.
+ However, the AMMR is updated regularly, and we would often like to cite a
+ specific version of the AMMR. Luckily, Zenodo &lt;a href=&quot;http://blog.zenodo.org/2017/05/30/doi-versioning-launched/&quot;&gt;supports DOI versioning&lt;/a&gt;, and
+ every version of the AMMR has their own DOI.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -46,18 +57,11 @@ an European Open Science platform hosted at &lt;a href=&quot;https://home.cern/&
 &lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;See also:&lt;/strong&gt; The complete &lt;a href=&quot;https://zenodo.org/search?page=1&amp;amp;size=20&amp;amp;q=conceptrecid:%221250764%22&amp;amp;sort=-publication_date&amp;amp;all_versions=True&quot;&gt;list of releases on Zenodo&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Once a DOI is created for the AMMR, &lt;a href=&quot;http://about.zenodo.org/&quot;&gt;Zenodo&lt;/a&gt; also
-archives the files for all future. This effectively means that you can now also
+archives all the files to ensure data is never lost. This effectively means that you can now also
 download all &lt;a href=&quot;https://zenodo.org/record/1287730&quot;&gt;archived versions of the AMMR&lt;/a&gt;
-directly from Zenodo:&lt;/p&gt;
+directly from Zenodo.&lt;/p&gt;
 
-&lt;figure&gt;
-  
-&lt;a href=&quot;https://zenodo.org/record/1287730&quot;&gt;&lt;img src=&quot;/assets/images/posts/doi_ammr_zendo.png&quot; alt=&quot;AMMR on Zenodo&quot; /&gt;&lt;/a&gt;
-
-  &lt;figcaption&gt;
-The AMMR record on Zenodo
-&lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;h3 id=&quot;citing-the-ammr&quot;&gt;Citing the AMMR&lt;/h3&gt;
 
 &lt;p&gt;DOI’s will help you cite the AMMR, and specify exactly which version the AMMR you use. At the same time others can be confident that they get the exact version of the AMMR that you
 used. Once a DOI is minted the underlying files can’t be changed. So DOIs are
