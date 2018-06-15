@@ -63,4 +63,9 @@ var store = [{
         "excerpt":"Join us for the launch of version 7.1 of our musculoskeletal simulation software - The AnyBody Modeling System, and a new version of the AnyBody Model repository (AMMR 2.0). In this webcast, Morten Enemark Lund, R&amp;D Engineer at AnyBody Technology, will the new software features and the exciting new model...","categories": ["news"],
         "tags": ["AMMR","Models"],
         "url": "https://anyscript.org/news/ammr-2.0/",
-        "teaser":"https://anyscript.org/assets/images/posts/ammr2_teaser.png"}]
+        "teaser":"https://anyscript.org/assets/images/posts/ammr2_teaser.png"},{
+        "title": "Model repository with a DOI",
+        "excerpt":"Digital Object Identifiers (DOI) arethe foundation of academic references. With the release of AMMR 2.1.1, we haveadded a DOI to the AMMR. The DOIs for the AMMR is handled by Zenodo, which isan European Open Science platform hosted at CERN. The DOI above always links to the newest version of...","categories": ["news"],
+        "tags": ["AMMR","Models"],
+        "url": "https://anyscript.org/news/DOI/",
+        "teaser":"https://anyscript.org/assets/images/posts/doi_teaser.png"}]

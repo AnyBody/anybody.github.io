@@ -135,6 +135,7 @@
 ./github_deploy_key_anybody_anybody_github_io.enc
 ./index.html
 ./miniconda.sh
+./news/DOI/index.html
 ./news/Numpy-and-scipy/index.html
 ./news/ammr-2.0/index.html
 ./news/freeing-the-anybody-tutorials/index.html

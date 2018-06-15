@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-06-15T15:14:13+02:00</updated><id>https://anyscript.org/</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">What is new AMMR 2.0</title><link href="https://anyscript.org/news/ammr-2.0/" rel="alternate" type="text/html" title="What is new AMMR 2.0" /><published>2017-11-29T00:00:00+01:00</published><updated>2017-11-29T00:00:00+01:00</updated><id>https://anyscript.org/news/ammr-2.0</id><content type="html" xml:base="https://anyscript.org/news/ammr-2.0/">&lt;p&gt;Join us for the launch of version 7.1 of our musculoskeletal simulation software - The AnyBody Modeling System, and a new version of the AnyBody Model repository (AMMR 2.0).&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-06-15T15:32:33+02:00</updated><id>https://anyscript.org/</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Model repository with a DOI</title><link href="https://anyscript.org/news/DOI/" rel="alternate" type="text/html" title="Model repository with a DOI" /><published>2018-06-15T00:00:00+02:00</published><updated>2018-06-15T00:00:00+02:00</updated><id>https://anyscript.org/news/DOI</id><content type="html" xml:base="https://anyscript.org/news/DOI/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Digital_object_identifier&quot;&gt;Digital Object Identifiers&lt;/a&gt; (DOI) are
+the foundation of academic references. With the release of AMMR 2.1.1, we have
+added a DOI to the AMMR.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://doi.org/10.5281/zenodo.1250764&quot;&gt;&lt;img src=&quot;https://zenodo.org/badge/DOI/10.5281/zenodo.1250764.svg&quot; alt=&quot;DOI&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The DOIs for the AMMR is handled by &lt;a href=&quot;http://about.zenodo.org/&quot;&gt;Zenodo&lt;/a&gt;, which is
+an European Open Science platform hosted at &lt;a href=&quot;https://home.cern/&quot;&gt;CERN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://zenodo.org/&quot; class=&quot;align-center&quot;&gt;&lt;img src=&quot;/assets/images/posts/DOI_zenodo-gradient-round.svg&quot; alt=&quot;Foo&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The DOI above always links to the newest version of the AMMR. That is called a concept DOI, and is useful if you want to cite all version of the AMMR. However, the AMMR is updated regularly, and we would often like to cite a specific version of the AMMR. Luckily, Zenodo &lt;a href=&quot;http://blog.zenodo.org/2017/05/30/doi-versioning-launched/&quot;&gt;supports DOI versioning&lt;/a&gt;, and every version of the AMMR has their own DOI.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Version&lt;/th&gt;
+      &lt;th&gt;DOI&lt;/th&gt;
+      &lt;th&gt;ReleaseData&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AMMR-2.1.1&lt;/td&gt;
+      &lt;td&gt;10.5281/zenodo.1287730&lt;/td&gt;
+      &lt;td&gt;June 12, 2018&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AMMR-2.1.0&lt;/td&gt;
+      &lt;td&gt;10.5281/zenodo.1251276&lt;/td&gt;
+      &lt;td&gt;March 25, 2018&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AMMR-2.0.0&lt;/td&gt;
+      &lt;td&gt;10.5281/zenodo.1251274&lt;/td&gt;
+      &lt;td&gt;November 30, 2017&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AMMR-1.6.6&lt;/td&gt;
+      &lt;td&gt;10.5281/zenodo.1250765&lt;/td&gt;
+      &lt;td&gt;March 13, 2017&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;See also:&lt;/strong&gt; The complete &lt;a href=&quot;https://zenodo.org/search?page=1&amp;amp;size=20&amp;amp;q=conceptrecid:%221250764%22&amp;amp;sort=-publication_date&amp;amp;all_versions=True&quot;&gt;list of releases on Zenodo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once a DOI is created for the AMMR, &lt;a href=&quot;http://about.zenodo.org/&quot;&gt;Zenodo&lt;/a&gt; also
+archives the files for all future. This effectively means that you can now also
+download all &lt;a href=&quot;https://zenodo.org/record/1287730&quot;&gt;archived versions of the AMMR&lt;/a&gt;
+directly from Zenodo:&lt;/p&gt;
+
+&lt;figure&gt;
+  
+&lt;a href=&quot;https://zenodo.org/record/1287730&quot;&gt;&lt;img src=&quot;/assets/images/posts/doi_ammr_zendo.png&quot; alt=&quot;AMMR on Zenodo&quot; /&gt;&lt;/a&gt;
+
+  &lt;figcaption&gt;
+The AMMR record on Zenodo
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;DOI’s will help you cite the AMMR, and specify exactly which version the AMMR you use. At the same time others can be confident that they get the exact version of the AMMR that you
+used. Once a DOI is minted the underlying files can’t be changed. So DOIs are
+also essential for traceability.&lt;/p&gt;
+
+&lt;p&gt;Here is an example of how to cite the AMMR v.2.1.1:&lt;/p&gt;
+
+&lt;div class=&quot;notice--success&quot;&gt;
+  &lt;h4&gt;How to cite:&lt;/h4&gt;
+  
+&lt;p&gt;Morten Enemark Lund, Søren Tørholm, &amp;amp; Moonki Jung. (2018, June 12). The AnyBody Managed Model Repository (AMMR) (Version 2.1.1). Zenodo. http://doi.org/10.5281/zenodo.1287730&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;You can also use Zenodo to easily generate other citation styles.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/doi_cite.png&quot; alt=&quot;Different citation styles&quot; /&gt;&lt;/p&gt;</content><author><name>Morten Enemark Lund</name></author><category term="AMMR" /><category term="Models" /><summary type="html">We have added a DOI for the AMMR repository. This will help user users communicate which version of the AMMR they are using, and make it easy to cite the AMMR.</summary></entry><entry><title type="html">What is new AMMR 2.0</title><link href="https://anyscript.org/news/ammr-2.0/" rel="alternate" type="text/html" title="What is new AMMR 2.0" /><published>2017-11-29T00:00:00+01:00</published><updated>2017-11-29T00:00:00+01:00</updated><id>https://anyscript.org/news/ammr-2.0</id><content type="html" xml:base="https://anyscript.org/news/ammr-2.0/">&lt;p&gt;Join us for the launch of version 7.1 of our musculoskeletal simulation software - The AnyBody Modeling System, and a new version of the AnyBody Model repository (AMMR 2.0).&lt;/p&gt;
 
 &lt;p&gt;In this webcast, Morten Enemark Lund, R&amp;amp;D Engineer at AnyBody Technology, will the new software features and the exciting new model repository which is shipped with version 7.1.&lt;/p&gt;
 
@@ -958,76 +1034,4 @@ AnyScript files.&lt;/p&gt;
 &lt;img src=&quot;https://cloud.githubusercontent.com/assets/22542671/20789877/5b5ba2b4-b7b6-11e6-991a-1f85db8522a0.gif&quot; alt=&quot;column mode editing&quot; /&gt;
 
   &lt;figcaption&gt;The ability to write at multiple cursors or select a column of text is fantastic.&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>Morten Enemark Lund</name></author><category term="Syntax highlighting" /><summary type="html">In this post, I will show an extension to get syntax highlighting and code folding working for Notepad++.</summary></entry><entry><title type="html">Create Animated GIFs</title><link href="https://anyscript.org/tips-n-tricks/create-animated-gifs/" rel="alternate" type="text/html" title="Create Animated GIFs" /><published>2017-04-10T00:00:00+02:00</published><updated>2017-04-10T00:00:00+02:00</updated><id>https://anyscript.org/tips-n-tricks/create-animated-gifs</id><content type="html" xml:base="https://anyscript.org/tips-n-tricks/create-animated-gifs/">&lt;p&gt;If a picture is worth a thousand words. What is the value of an animated GIF?&lt;/p&gt;
-
-&lt;p&gt;If anyone knew the answer to this question it was 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Eadweard_Muybridge&quot;&gt;Eadweard Muybridge&lt;/a&gt; 
-who was an 19th century photographer and the grandfather of today’s
-biomechanical scientists. He used sequences of photographs to analyze human and
-animal motion. At Muybridge’s time the work created lots of attention, and even
-today his short animations are iconic.&lt;/p&gt;
-
-&lt;figure&gt;
-  
-&lt;img src=&quot;https://anyscript.org/assets/images/posts/gif_muybridge_horse.gif&quot; alt=&quot;Muybridge animated horse&quot; /&gt;
-
-  &lt;figcaption&gt;Galloping horse by Eadweard Muybridge.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://anyscript.org//tips-n-tricks/creating-videos-from-your-simulations/&quot;&gt;In a previous post&lt;/a&gt;
-I introduced an AnyScript class-template to create awesome
-videos of your musculoskeletal simulations with a single click. But sometimes
-videos are just not enough.&lt;/p&gt;
-
-&lt;p&gt;If we want something that loops continuously and runs
-automatically, then we must create animated GIF files. Small animations
-accomplish something, which Eadweard Muybridge discovered long ago. They
-immediately convey the message and spell bind the viewer by allowing them 
-to dwell on the details.&lt;/p&gt;
-
-&lt;h2 id=&quot;new-feature-to-create-animated-gifs&quot;&gt;New feature to create animated GIFs&lt;/h2&gt;
-
-&lt;p&gt;Today I just added a new feature to the video plugin. The ability to create good
-looking GIF files directly from the video. After producing the video, it can be converted into a GIF file. Just run the operation &lt;code&gt;Operations.Convert_video_to_animated_gif&lt;/code&gt;&lt;/p&gt;
-
-&lt;p class=&quot;full&quot;&gt;&lt;img src=&quot;https://anyscript.org/assets/images/posts/gif-convert-operation.png&quot; alt=&quot;Convert GIF operation&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Creating good looking GIF is more tricky than it may seem. The number of
-possible colors is limited to 256 in a GIF file. Thus, it is important to
-specify a color palette, otherwise, the image quality will suffer.&lt;/p&gt;
-
-&lt;p&gt;The video plugin uses &lt;a href=&quot;https://ffmpeg.org/&quot;&gt;&lt;strong&gt;FFmpeg&lt;/strong&gt;&lt;/a&gt; in two passes. The first
-pass generates a global color palette from the entire video. The second pass
-encodes the GIF file with the generated palette. You can read more on the
-approach in this &lt;a href=&quot;http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html&quot;&gt;excellent blog post&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The video plugin does not create animated GIF  by default. For several reasons. Not all
-videos work well as an animated GIF file, and GIF files can take up a lot of space.
-But if you want to avoid the manual step, when generating the GIF file add the
-&lt;code&gt;CREATE_GIF=1&lt;/code&gt; argument to the AnyScript class template:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-anyscriptdoc&quot; data-lang=&quot;anyscriptdoc&quot;&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;VideoLookAtCamera&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;MyCam&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UP_DIRECTION&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CREATE_GIF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
-  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;CameraLookAtPoint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Femur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Knee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-       &lt;span class=&quot;n&quot;&gt;CameraFieldOfView&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;CameraDirection&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;BackgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;VideoInputFrameRate&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;VideoResolution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1920&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1080&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;Analysis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;kt&quot;&gt;AnyOperation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyStudy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Kinematics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;find-the-code-on-github&quot;&gt;Find the code on GitHub&lt;/h3&gt;
-
-&lt;p&gt;The AnyScript template is &lt;a href=&quot;https://github.com/AnyBody/video-recorder&quot;&gt;hosted on GitHub&lt;/a&gt;, 
-where you can also find a few examples that show how it works. The repository also has
-documentation on the &lt;code&gt;class_template&lt;/code&gt; and its options.&lt;/p&gt;
-
-&lt;figure&gt;
-  
-&lt;img src=&quot;https://anyscript.org/assets/images/posts/video_human.gif&quot; alt=&quot;Human gif file&quot; /&gt;
-
-  &lt;figcaption&gt;Animated GIF file, where the camera is spinning around the model.&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>Morten Enemark Lund</name></author><category term="Creating Videos" /><summary type="html">If a picture is worth a thousand words. What is the value of an animated GIF?</summary></entry></feed>
+&lt;/figure&gt;</content><author><name>Morten Enemark Lund</name></author><category term="Syntax highlighting" /><summary type="html">In this post, I will show an extension to get syntax highlighting and code folding working for Notepad++.</summary></entry></feed>
