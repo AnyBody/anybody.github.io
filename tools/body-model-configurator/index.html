@@ -346,7 +346,7 @@
 
 
 
-  3 minute read
+  4 minute read
 </p>
           
         </header>
@@ -364,10 +364,8 @@ which we call Body Model (BM) statements.</p>
 <p>Wouldn’t it be nice to configure the model by having some buttons and
 instantaneous visual feedback as well? That is what I thought! Therefore, I have
 developed a software which provides a graphical user interface (GUI) for configuring the
-Body Model in a more friendly manner but without trying to give up the
-flexibility of AnyScript. It has in target both beginner AMS users, who have little to no experience using
-AnyScript, and advanced AMS users who are looking for a tool that makes the body configuration
-process faster.</p>
+Body Model, called BM-Plugin. By using it, you will be able to configure your human model in a more friendly manner but without trying to give up the
+flexibility of AnyScript.</p>
 
 <figure>
   
@@ -376,14 +374,29 @@ process faster.</p>
   <figcaption>BM Plugin: gives you the ability to visually configure the Body Model.</figcaption>
 </figure>
 
-<p>This software (called ‘BM-Plugin’) comes as an extension for the AnyBody
-Modeling System. The layout is pretty straight forward, so you will not have a
-hard time finding your way around it. The available adjustments for the Body
-Model are classified in 6 tabs (Body, Arms, Trunk, Legs, Scaling, Mannequin
-Drivers). The adjustments which could not be classified in any of the tabs can
-be found in the ‘Advanced Tab’.</p>
+<p>BM-Plugin has in target both beginner and advanced AMS users. If you have little to no experience using
+AnyScript, the BM Plugin will help you a lot in getting started with it and to understand how switches and BM statements work. 
+If you are an advanced AMS user, you will find configuring your human model much easier and much faster by using the plugin. And don’t worry
+about loosing your freedom with AnyScript! BM Plugin is not meant to replace it, it is meant to write it for you, so it saves you time.</p>
 
-<h2 id="installation">Installation</h2>
+<p>In the remainder of this post I will show you what the plugin is able of and a little bit of technicalities.</p>
+
+<h2 id="how-to-get-and-use-bm-plugin">How to get and use BM-Plugin</h2>
+
+<p>BM-Plugin comes integrated with AMMR v2.2(???) and it is available starting with AMS v7.2(???). All you have to do is to make sure that
+you have these versions or later available on your computer. You can find more information about how to get the latest AMMR 
+<a href="https://anyscript.org/editors/anyscript-in-vscode/">here</a>. Once you make sure that you have the latest version of AMS and AMMR installed,
+load your model which contains the <code>HumanModel</code>:</p>
+
+<figure class="highlight"><pre><code class="language-anyscriptdoc" data-lang="anyscriptdoc"><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_BODY&gt;/HumanModel.any&quot;</span></code></pre></figure>
+
+<p>and if everything is fine, you should be able to start the BM-Plugin by clicking the button marked in the figure below:</p>
+
+<figure>
+  
+
+  <figcaption>Load your model and start the plugin by only clicking a button.</figcaption>
+</figure>
 
 <p>To use the BM-Plugin, you must have installed the Anaconda Python distribution
 which you can find it <a href="https://www.continuum.io/downloads">here</a>. Make sure to
