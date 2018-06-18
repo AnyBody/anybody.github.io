@@ -40,7 +40,7 @@ var store = [{
         "url": "https://anyscript.org/tools/rom-limits/",
         "teaser":"https://anyscript.org/assets/images/posts/rom-limits_teaser.png"},{
         "title": "Body Model Configuration App",
-        "excerpt":"Graphical user interfaces (GUIs) enables easy and intuitive interaction betweenusers and computer software. But GUIs may also hamper the flexibility and makethe software less powerful. Hence, many powerful software tools are based onscripts, text and code. This is also the case of the AnyBody Modeling System.AnyScript is the language in...","categories": ["Tools"],
+        "excerpt":"One of the first things I did when starting to use the AnyBody ModelingSystem, was to understand how to configure the human model. This means enabling and disabling different body parts and setting up the available options for muscles, ligamentsetc. The model is configured via AnyScript by defining switcheswhich we...","categories": ["Tools"],
         "tags": ["Model configuration","BM switches"],
         "url": "https://anyscript.org/tools/body-model-configurator/",
         "teaser":"https://anyscript.org/assets/images/posts/BM_Plugin_teaser.JPG"},{
