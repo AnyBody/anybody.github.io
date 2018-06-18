@@ -10,10 +10,10 @@ var store = [{
         "url": "https://anyscript.org/tips-n-tricks/useful-anyscript-macros/",
         "teaser":"https://anyscript.org/assets/images/macro_post_teaser.png"},{
         "title": "Creating videos",
-        "excerpt":"In this post, I will show a new AnyScript plugin to create awesome videos of yourmusculoskeletal simulations with a single click. Download on GitHub Previously, I often spent hours creating videos for presentations, etc.. Now ittakes me 10 minutes. Besides being easy to use the plugin also supports somewhatcomplicated setups...","categories": ["Tips-n-Tricks"],
+        "excerpt":"In this post, I will show a new AnyScript template to create awesome videos of yourmusculoskeletal simulations with a single click. Download on GitHub Edit: The template is now included with the AMMR, and doesn’t need to be downloaded separately. Include it like this: #include &quot;&lt;ANYBODY_PATH_MODELUTILS&gt;/Video/CameraClassTemplate.any&quot;Previously, I often spent hours...","categories": ["Tips-n-Tricks"],
         "tags": ["Creating Videos"],
         "url": "https://anyscript.org/tips-n-tricks/creating-videos-from-your-simulations/",
-        "teaser":"https://anyscript.org/assets/images/posts/video_post_teaser.png"},{
+        "teaser":"https://anyscript.org/assets/images/teaser.jpg"},{
         "title": "Create Animated GIFs",
         "excerpt":"If a picture is worth a thousand words. What is the value of an animated GIF? If anyone knew the answer to this question it was Eadweard Muybridge who was an 19th century photographer and the grandfather of today’sbiomechanical scientists. He used sequences of photographs to analyze human andanimal motion....","categories": ["Tips-n-Tricks"],
         "tags": ["Creating Videos"],
