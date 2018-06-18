@@ -5,7 +5,6 @@
 ./assets/css/main.css
 ./assets/images/AnyScriptFront-th.jpg
 ./assets/images/AnyScriptFront.jpg
-./assets/images/BM_DEMO.gif
 ./assets/images/anyscript.gif
 ./assets/images/anyscript_logo.png
 ./assets/images/anyscript_logo.svg
@@ -72,6 +71,7 @@
 ./assets/images/posts/Include_Plugin.JPG
 ./assets/images/posts/ammr2_teaser.png
 ./assets/images/posts/anymocap_teaser.png
+./assets/images/posts/bm_config_bmdemo.gif
 ./assets/images/posts/doi_ammr_zendo.png
 ./assets/images/posts/doi_cite.png
 ./assets/images/posts/doi_teaser.png
