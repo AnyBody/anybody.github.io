@@ -10,7 +10,7 @@ var store = [{
         "url": "https://anyscript.org/tips-n-tricks/useful-anyscript-macros/",
         "teaser":"https://anyscript.org/assets/images/macro_post_teaser.png"},{
         "title": "Creating videos",
-        "excerpt":"In this post, I will show a new AnyScript template to create awesome videos of yourmusculoskeletal simulations with a single click. Download on GitHub Edit: The template is now included with the AMMR, and doesn’t need to be downloaded separately. Include it like this: #include &quot;&lt;ANYBODY_PATH_MODELUTILS&gt;/Video/CameraClassTemplate.any&quot;Previously, I often spent hours...","categories": ["Tips-n-Tricks"],
+        "excerpt":"In this post, I will show a new AnyScript template to create awesome videos of yourmusculoskeletal simulations with a single click. Download on GitHub Notice: You can now find the template directly in the AMMR. Include it like this: #include &quot;&lt;ANYBODY_PATH_MODELUTILS&gt;/Video/CameraClassTemplate.any&quot;Previously, I often spent hours creating videos for presentations, etc.....","categories": ["Tips-n-Tricks"],
         "tags": ["Creating Videos"],
         "url": "https://anyscript.org/tips-n-tricks/creating-videos-from-your-simulations/",
         "teaser":"https://anyscript.org/assets/images/teaser.jpg"},{
