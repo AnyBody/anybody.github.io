@@ -39,11 +39,6 @@ var store = [{
         "tags": ["kinematics","joints"],
         "url": "https://anyscript.org/tools/rom-limits/",
         "teaser":"https://anyscript.org/assets/images/posts/rom-limits_teaser.png"},{
-        "title": "Body Model Configuration App",
-        "excerpt":"One of the first things I did when starting to use the AnyBody ModelingSystem, was to understand how to configure the human model. This means enabling and disabling different body parts and setting up the available options for muscles, ligamentsetc. The model is configured via AnyScript by defining switcheswhich we...","categories": ["Tools"],
-        "tags": ["Model configuration","BM switches"],
-        "url": "https://anyscript.org/tools/body-model-configurator/",
-        "teaser":"https://anyscript.org/assets/images/posts/BM_Plugin_teaser.JPG"},{
         "title": "AnyScript support in Visual Studio Code",
         "excerpt":"Visual Studio Code(VS Code) is one of the newest texteditors to join the group of new powerful source code editors like Atom, Sublime Text and brackets. All of which have become extremely popular in recent years. Visual Studio Code is currently my favorite text editor. It is cross-platform, lightweight, extensible...","categories": ["Editors"],
         "tags": ["Syntax highlighting","Visual Studio Code"],
@@ -68,4 +63,9 @@ var store = [{
         "excerpt":"Digital Object Identifiers (DOIs) arethe foundation of references and metrics in the world of academia. With the releaseof AMMR 2.1.1 we have also added a DOI to the AnyBody Managed Model Repository (AMMR): . The DOI for the AMMR are issues by Zenodo, which isan European Open Science platform hosted...","categories": ["news"],
         "tags": ["AMMR","Models"],
         "url": "https://anyscript.org/news/DOI/",
-        "teaser":"https://anyscript.org/assets/images/posts/doi_teaser.png"}]
+        "teaser":"https://anyscript.org/assets/images/posts/doi_teaser.png"},{
+        "title": "Body Model Configuration App",
+        "excerpt":"One of the first things I did when starting to use the AnyBody ModelingSystem, was to understand how to configure the human model. This means enabling and disabling different body parts and setting up the available options for muscles, ligamentsetc. The model is configured via AnyScript by defining switcheswhich we...","categories": ["Tools"],
+        "tags": ["Model configuration","BM switches"],
+        "url": "https://anyscript.org/tools/body-model-configurator/",
+        "teaser":"https://anyscript.org/assets/images/posts/BM_Plugin_teaser.JPG"}]
