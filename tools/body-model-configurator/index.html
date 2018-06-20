@@ -385,8 +385,8 @@ about loosing your freedom with AnyScript! BM Plugin is not meant to replace it,
 
 <p>BM-Plugin comes integrated with AMMR v2.2(???) and it is available to use in AMS starting with version v7.2(???). All you have to do is to make sure that
 you have these versions or later available on your computer. You can find more information about how to get the latest AMMR 
-<a href="https://anyscript.org/getting-started/">here</a>. Once you make sure that you have the latest version of AMS and AMMR installed,
-load your model which contains the <code>HumanModel</code>:</p>
+<a href="https://anyscript.org/getting-started/">here</a>. Once you have everything ready,
+load your model containing the <code>HumanModel</code>:</p>
 
 <figure class="highlight"><pre><code class="language-anyscriptdoc" data-lang="anyscriptdoc"><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_BODY&gt;/HumanModel.any&quot;</span></code></pre></figure>
 
@@ -406,7 +406,7 @@ to adjust the configuration of different body parts while providing visual
 feedback if available. These tabs are: <code>Body</code>, <code>Legs</code>, <code>Arms</code>, <code>Trunk</code> and
 <code>Mannequin Drivers</code>. Once the desired configuration is set, you can load it in
 AMS by clicking <code>Apply</code> or <code>OK</code>. The difference is that by clicking <code>Apply</code>
-the Plugin will stay open for you to configure the model further. When <code>OK</code> is clicked, the configuration is saved in a history file which is available in the <code>Apply History</code> drop menu, next to the <code>Apply</code> button. It is therefore possible to load a previous configuration of the model.</p>
+the Plugin will stay open for you to configure the model further. When <code>OK</code> is clicked, the configuration is saved in a history file which is available in the <code>Apply History</code> drop menu, next to the <code>Apply</code> button. It is therefore possible to load a previous configurations of the model.</p>
 
 <figure>
   
@@ -417,11 +417,11 @@ the Plugin will stay open for you to configure the model further. When <code>OK<
 
 <p>Of course, not all BM statements have a visual representation in the AMS Model View or are directly related to physical body parts. Therefore, the BM statements which were not classified in the tabs mentioned before can be found and modified in the <code>Advanced</code> tab.</p>
 
-<p>By having the presented overview of the Plugin, you should be ready to use it now. However, if you are interested in finding some details about how it works behind scenes too, continue reading.</p>
+<p>By having the presented overview of the Plugin, you should be ready to use it now. However, if you are interested in finding some details about how it works behind scenes the too, continue reading.</p>
 
 <h2 id="how-bm-plugin-works">How BM-Plugin works</h2>
 
-<p>As stated in the introduction, the BM-Plugin is dependent on the <code>HumanModel</code>. Therefore, every time you start the plugin, it will check your <code>.main.any</code> file to determine if it is included in your own model. If it is, the Plugin will create a new file named <code>BodyModelConfiguration.any</code> inside the <code>Model</code> folder next to your <code>.main.any</code> file. The plugin will then ask you if you allow it to include this file inside the main file (I recommend that you do):</p>
+<p>As stated in the introduction, the BM-Plugin is dependent on the <code>HumanModel</code>. Therefore, every time you start the plugin, it will check your <code>.main.any</code> file to determine if it is included. If it is, the Plugin will create a new file named <code>BodyModelConfiguration.any</code> inside the <code>Model</code> folder next to your <code>.main.any</code> file. The plugin will then ask you if you allow it to include this file inside the main file (I recommend that you do):</p>
 
 <figure class="highlight"><pre><code class="language-anyscriptdoc" data-lang="anyscriptdoc"><span></span><span class="cp">#include</span> <span class="s">&quot;Model/BodyModelConfiguration.any&quot;</span></code></pre></figure>
 
@@ -433,7 +433,7 @@ the Plugin will stay open for you to configure the model further. When <code>OK<
   
 <img src="https://anyscript.org/assets/images/posts/bm_config_script.png" alt="BM_Plugin_Script" />
 
-  <figcaption>The 'Body', 'Legs', 'Arms', 'Trunk' and 'Mannequin Drivers' tabs.</figcaption>
+  <figcaption>The `Script File` tab.</figcaption>
 </figure>
 
 <p>Now I think you know enough about the plugin to try it yourself, so what are you waiting for?</p>
