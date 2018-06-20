@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-06-20T12:55:35+02:00</updated><id>https://anyscript.org/</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">AMMR now has a DOI</title><link href="https://anyscript.org/news/DOI/" rel="alternate" type="text/html" title="AMMR now has a DOI" /><published>2018-06-15T00:00:00+02:00</published><updated>2018-06-15T00:00:00+02:00</updated><id>https://anyscript.org/news/DOI</id><content type="html" xml:base="https://anyscript.org/news/DOI/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Digital_object_identifier&quot;&gt;Digital Object Identifiers&lt;/a&gt; (DOIs) are
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-06-20T14:35:20+02:00</updated><id>https://anyscript.org/</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">AMMR now has a DOI</title><link href="https://anyscript.org/news/DOI/" rel="alternate" type="text/html" title="AMMR now has a DOI" /><published>2018-06-15T00:00:00+02:00</published><updated>2018-06-15T00:00:00+02:00</updated><id>https://anyscript.org/news/DOI</id><content type="html" xml:base="https://anyscript.org/news/DOI/">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Digital_object_identifier&quot;&gt;Digital Object Identifiers&lt;/a&gt; (DOIs) are
 the foundation of references and metrics in the world of academia. With the release
 of AMMR 2.1.1 we have also added a DOI to the AnyBody Managed Model Repository (AMMR):&lt;/p&gt;
 
@@ -590,13 +590,13 @@ AnyScript, the BM Plugin will help you a lot in getting started with it and to u
 If you are an advanced AMS user, you will find configuring your human model much easier and much faster by using the plugin. And don’t worry
 about loosing your freedom with AnyScript! BM Plugin is not meant to replace it, it is meant to write it for you, so it saves you time.&lt;/p&gt;
 
-&lt;p&gt;In the remainder of this post I will show you what the plugin is able of and a little bit of technicalities.&lt;/p&gt;
+&lt;p&gt;In the remainder of this post I will show you what the plugin is able of doing and some technicalities.&lt;/p&gt;
 
 &lt;h2 id=&quot;how-to-get-and-use-bm-plugin&quot;&gt;How to get and use BM-Plugin&lt;/h2&gt;
 
-&lt;p&gt;BM-Plugin comes integrated with AMMR v2.2(???) and it is available starting with AMS v7.2(???). All you have to do is to make sure that
+&lt;p&gt;BM-Plugin comes integrated with AMMR v2.2(???) and it is available to use in AMS starting with version v7.2(???). All you have to do is to make sure that
 you have these versions or later available on your computer. You can find more information about how to get the latest AMMR 
-&lt;a href=&quot;https://anyscript.org/editors/anyscript-in-vscode/&quot;&gt;here&lt;/a&gt;. Once you make sure that you have the latest version of AMS and AMMR installed,
+&lt;a href=&quot;https://anyscript.org/getting-started/&quot;&gt;here&lt;/a&gt;. Once you make sure that you have the latest version of AMS and AMMR installed,
 load your model which contains the &lt;code&gt;HumanModel&lt;/code&gt;:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-anyscriptdoc&quot; data-lang=&quot;anyscriptdoc&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;lt;ANYBODY_PATH_BODY&amp;gt;/HumanModel.any&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -610,95 +610,42 @@ load your model which contains the &lt;code&gt;HumanModel&lt;/code&gt;:&lt;/p&gt
   &lt;figcaption&gt;Load your model and start the plugin by only clicking a button.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;To use the BM-Plugin, you must have installed the Anaconda Python distribution
-which you can find it &lt;a href=&quot;https://www.continuum.io/downloads&quot;&gt;here&lt;/a&gt;. Make sure to
-install python 3.6. Open an Anaconda terminal and execute:&lt;/p&gt;
+&lt;h2 id=&quot;using-bm-plugin&quot;&gt;Using BM-Plugin&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;conda install --channel anybody bm-plugin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If the command is not working, you might need to run the terminal as Administrator.
-After the installation you can find the application in the Windows start menu.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Start-&amp;gt;AnyBody plugins-&amp;gt;Body Model Configurator&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The Plugin modifies an AnyScript (&lt;code&gt;.any&lt;/code&gt;) file and stores the configuration as 
-BM statements inside it. Once you open the plugin, it will ask you
-to choose an existing &lt;code&gt;.any&lt;/code&gt; file. You can 
-also use the tool on your existing model. Just choose the file where you have your
-BM-statements.&lt;/p&gt;
+&lt;p&gt;The BM-Plugin is structured in a number of tabs, each of them giving you options
+to adjust the configuration of different body parts while providing visual
+feedback if available. These tabs are: &lt;code&gt;Body&lt;/code&gt;, &lt;code&gt;Legs&lt;/code&gt;, &lt;code&gt;Arms&lt;/code&gt;, &lt;code&gt;Trunk&lt;/code&gt; and
+&lt;code&gt;Mannequin Drivers&lt;/code&gt;. Once the desired configuration is set, you can load it in
+AMS by clicking &lt;code&gt;Apply&lt;/code&gt; or &lt;code&gt;OK&lt;/code&gt;. The difference is that by clicking &lt;code&gt;Apply&lt;/code&gt;
+the Plugin will stay open for you to configure the model further. When &lt;code&gt;OK&lt;/code&gt; is clicked, the configuration is saved in a history file which is available in the &lt;code&gt;Apply History&lt;/code&gt; drop menu, next to the &lt;code&gt;Apply&lt;/code&gt; button. It is therefore possible to load a previous configuration of the model.&lt;/p&gt;
 
 &lt;figure&gt;
   
-&lt;img src=&quot;https://anyscript.org/assets/images/posts/Any_file.JPG&quot; alt=&quot;Any_file&quot; /&gt;
+&lt;img src=&quot;https://anyscript.org/assets/images/posts/bm_config_tabs.gif&quot; alt=&quot;BM_Plugin_Tabs&quot; /&gt;
 
-  &lt;figcaption&gt;Choose the .any file with which the plugin will interact.&lt;/figcaption&gt;
+  &lt;figcaption&gt;The 'Body', 'Legs', 'Arms', 'Trunk' and 'Mannequin Drivers' tabs.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;The absolute path of the &lt;code&gt;.any&lt;/code&gt; file has to be included in your model:&lt;/p&gt;
+&lt;p&gt;Of course, not all BM statements have a visual representation in the AMS Model View or are directly related to physical body parts. Therefore, the BM statements which were not classified in the tabs mentioned before can be found and modified in the &lt;code&gt;Advanced&lt;/code&gt; tab.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-anyscriptdoc&quot; data-lang=&quot;anyscriptdoc&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BM_configuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;any&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;By having the presented overview of the Plugin, you should be ready to use it now. However, if you are interested in finding some details about how it works behind scenes too, continue reading.&lt;/p&gt;
 
-&lt;p class=&quot;notice--warning&quot;&gt;Be sure to include it before the &lt;code&gt;HumanModel.any&lt;/code&gt; is included. Otherwise the configuration will
-have no effect.&lt;/p&gt;
+&lt;h2 id=&quot;how-bm-plugin-works&quot;&gt;How BM-Plugin works&lt;/h2&gt;
+
+&lt;p&gt;As stated in the introduction, the BM-Plugin is dependent on the &lt;code&gt;HumanModel&lt;/code&gt;. Therefore, every time you start the plugin, it will check your &lt;code&gt;.main.any&lt;/code&gt; file to determine if it is included in your own model. If it is, the Plugin will create a new file named &lt;code&gt;BodyModelConfiguration.any&lt;/code&gt; inside the &lt;code&gt;Model&lt;/code&gt; folder next to your &lt;code&gt;.main.any&lt;/code&gt; file. The plugin will then ask you if you allow it to include this file inside the main file (I recommend that you do):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-anyscriptdoc&quot; data-lang=&quot;anyscriptdoc&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Model/BodyModelConfiguration.any&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The plugin will store and modify all the needed BM statements for your model inside the &lt;code&gt;BodyModelConfiguration.any&lt;/code&gt; file. I encourage you to use this file to store the BM statements regardless if you use the plugin frequently or not. You will also find that most of the examples using the &lt;code&gt;HumanModel&lt;/code&gt; have this structure implemented and they are ready to be configured using the BM-Plugin.&lt;/p&gt;
+
+&lt;p&gt;The Configuration file can be seen inside the plugin under the &lt;code&gt;Script File&lt;/code&gt; tab:&lt;/p&gt;
 
 &lt;figure&gt;
   
-&lt;img src=&quot;https://anyscript.org/assets/images/posts/Include_Plugin.JPG&quot; alt=&quot;Include_Plugin&quot; /&gt;
+&lt;img src=&quot;https://anyscript.org/assets/images/posts/bm_config_script.png&quot; alt=&quot;BM_Plugin_Script&quot; /&gt;
 
-  &lt;figcaption&gt;Include the .any file in AnyBody&lt;/figcaption&gt;
+  &lt;figcaption&gt;The 'Body', 'Legs', 'Arms', 'Trunk' and 'Mannequin Drivers' tabs.&lt;/figcaption&gt;
 &lt;/figure&gt;
-
-&lt;p&gt;The plugin modifies only the BM statements in the .any file, and shouldn’t mess
-with formatting of the file. Therefore, you may have other stuff in it. Any new
-BM statements are added at the end of the file, but are free to manually format
-the file.&lt;/p&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;As I said before, the plugin is very easy to use and it offers an alternative to
-writing AnyScript for configuring the Body Model. You will see that there is a
-level of interdependency between different available options. So the
-combinations of adjustments which cannot be compiled by the AnyBody Modeling
-System will not be possible to select in the Plugin. However, in the Advanced tab
-you are allowed to choose any combination of BM
-statements you desire. Descriptions for each BM statement and for their available options are provided in this tab.&lt;/p&gt;
-
-&lt;figure&gt;
-  
-&lt;img src=&quot;https://anyscript.org/assets/images/posts/Adv_tab.JPG&quot; alt=&quot;Adv_tab&quot; /&gt;
-
-  &lt;figcaption&gt;The advanced tab of the plugin.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;The grid in the Advanced tab is populated using the &lt;code&gt;.xml&lt;/code&gt; file located in AMMR
-where all the BM statements can be found. Every time you run the plugin, it
-will check that &lt;code&gt;.xml&lt;/code&gt; file for any changes and it will update the grid in
-advanced tab with any new BM statements it finds. The &lt;code&gt;.xml&lt;/code&gt; file is in the installation
-files of the plugin.&lt;/p&gt;
-
-&lt;h2 id=&quot;further-development&quot;&gt;Further development:&lt;/h2&gt;
-
-&lt;p&gt;To make this plugin as attractive as possible, a number of new cool things will
-be added in the feature and I am already working on them:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Connection with AnyBody: in order to give the possibility of opening the
-plugin directly from AnyBody, to load the model by pressing a button in the
-plugin and to automatically add the include line where it has to be in the Body
-Model’s script;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Add control over Body parameters like Weight and Height (these are not BM statements);&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Integrate the plugin with AMMR to be up to date with the latest BM statements;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Add the possibility for the user to add their own GUI elements linked to custom BM statements.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;p&gt;Now I think you know enough about the plugin to try it yourself, so what are you waiting for?&lt;/p&gt;
 
