@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-06-20T14:59:27+02:00</updated><id>https://anyscript.org/</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Body Model Configuration App</title><link href="https://anyscript.org/tools/body-model-configurator/" rel="alternate" type="text/html" title="Body Model Configuration App" /><published>2018-06-20T00:00:00+02:00</published><updated>2018-06-20T00:00:00+02:00</updated><id>https://anyscript.org/tools/body-model-configurator</id><content type="html" xml:base="https://anyscript.org/tools/body-model-configurator/">&lt;p&gt;One of the first things I did when starting to use the AnyBody Modeling
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-09-13T14:10:45+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Body Model Configuration App</title><link href="https://anyscript.org/tools/body-model-configurator/" rel="alternate" type="text/html" title="Body Model Configuration App" /><published>2018-06-20T00:00:00+02:00</published><updated>2018-06-20T00:00:00+02:00</updated><id>https://anyscript.org/tools/body-model-configurator</id><content type="html" xml:base="https://anyscript.org/tools/body-model-configurator/">&lt;p&gt;One of the first things I did when starting to use the AnyBody Modeling
 System, was to understand how to configure the human model. This means enabling and disabling different body parts and setting up the available options for muscles, ligaments
 etc. The model is configured via AnyScript by defining switches
 which we call Body Model (BM) statements.&lt;/p&gt;
@@ -970,11 +970,10 @@ they provide.&lt;/p&gt;
 It is fast and works well on Windows. To enable AnyScript support in Notepad++
 you need to the install AnyScript language extension.&lt;/p&gt;
 
-&lt;p&gt;You can find the extension on the &lt;a href=&quot;https://github.com/AnyBody/support/wiki/Using-Notepad---to-edit-AnyScipt&quot;&gt;AnyScript wiki
-site&lt;/a&gt;,
+&lt;p&gt;You can find the extension on &lt;a href=&quot;https://github.com/AnyBody/notepad-plus-plus-anyscript&quot;&gt;GitHub&lt;/a&gt;,
 or download it here directly:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/AnyBody/support/master/Wiki_Files/Using_Notepad/AnyScript.xml&quot; class=&quot;btn btn--success btn--large&quot;&gt;&lt;i class=&quot;fa fa-download&quot;&gt;&lt;/i&gt; Download AnyScript
+&lt;p&gt;&lt;a href=&quot;https://github.com/AnyBody/notepad-plus-plus-anyscript/raw/master/anyscript.xml&quot; class=&quot;btn btn--success btn--large&quot;&gt;&lt;i class=&quot;fa fa-download&quot;&gt;&lt;/i&gt; Download AnyScript
 Notepad++&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Save the file &lt;code&gt;AnyScript.xml&lt;/code&gt; to your computer. Open Notepad++ and select the menu: “Language”-&amp;gt;”Define your language” and click import…&lt;/p&gt;
