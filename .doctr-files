@@ -87,6 +87,9 @@
 ./assets/images/posts/iaor_drawing.svg
 ./assets/images/posts/iaor_reffreames.gif
 ./assets/images/posts/iaor_teaser.png
+./assets/images/posts/max-strength_max_act.png
+./assets/images/posts/max-strength_simple-arm.png
+./assets/images/posts/max-strength_teaser.png
 ./assets/images/posts/new_website.jpg
 ./assets/images/posts/new_website_small.jpg
 ./assets/images/posts/npp-teaser.png
@@ -154,6 +157,7 @@
 ./tips-n-tricks/creating-videos-from-your-simulations/index.html
 ./tips-n-tricks/useful-anyscript-macros/index.html
 ./tools/body-model-configurator/index.html
+./tools/estimating-maximum-model-strength/index.html
 ./tools/instantaneous-axis-of-rotation/index.html
 ./tools/rom-limits/index.html
 ./year-archive/index.html

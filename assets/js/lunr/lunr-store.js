@@ -68,4 +68,9 @@ var store = [{
         "excerpt":"One of the first things I did when starting to use the AnyBody ModelingSystem, was to understand how to configure the human model. This means enabling and disabling different body parts and setting up the available options for muscles, ligamentsetc. The model is configured via AnyScript by defining switcheswhich we...","categories": ["Tools"],
         "tags": ["Model configuration","BM switches"],
         "url": "https://anyscript.org/tools/body-model-configurator/",
-        "teaser":"https://anyscript.org/assets/images/posts/BM_Plugin_teaser.JPG"}]
+        "teaser":"https://anyscript.org/assets/images/posts/BM_Plugin_teaser.JPG"},{
+        "title": "Getting the maximal strength of your model!",
+        "excerpt":"When working with subject specific scaling of models, it can be avaluable tool to know what the strength of your model is for a givenposture. This post will show you a way of calculating the maximalstrength of a simple 2D arm model in various postures. The conceptspresented can of course...","categories": ["tools"],
+        "tags": ["strength","muscle"],
+        "url": "https://anyscript.org/tools/estimating-maximum-model-strength/",
+        "teaser":"https://anyscript.org/assets/images/posts/max-strength_teaser.png"}]

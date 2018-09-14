@@ -1,0 +1,658 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.11.2 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Getting the maximal strength of your model! - AnyScript Community</title>
+<meta name="description" content="In this post you will see how to find the maximum strength of model.">
+
+
+  <meta name="author" content="Bjørn Keller Jensen">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="AnyScript Community">
+<meta property="og:title" content="Getting the maximal strength of your model!">
+<meta property="og:url" content="https://anyscript.org/tools/estimating-maximum-model-strength/">
+
+
+  <meta property="og:description" content="In this post you will see how to find the maximum strength of model.">
+
+
+
+  <meta property="og:image" content="https://anyscript.org/assets/images/posts/max-strength_teaser.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2018-09-14T00:00:00+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://anyscript.org/tools/estimating-maximum-model-strength/">
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://anyscript.org",
+      "logo": "/assets/images/anyscript_logo_community.png"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "AnyBody Technology",
+      "url": "https://anyscript.org",
+      "sameAs": {"linkedin":"https://www.linkedin.com/company/anybody-technology-a-s","github":"https://github.com/anybody","youtube":"https://www.youtube.com/user/anybodytech","facebook":"https://www.facebook.com/groups/AnyBodyGroup/"}
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="Gads1dEJfrM11RlSRBUKWHHjKWkf_JfNOC1Deq7LaF0" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="AnyScript Community Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/icons/manifest.json">
+<link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#b91d47">
+<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
+<meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"/>
+
+
+<style type="text/css">
+#watermark {
+  color: #e0e0e0;
+  font-size: 200pt;
+  text-align: center;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  position: fixed;
+  min-height:50%; 
+  min-width:50%;
+  margin: 0;
+  z-index: -1;
+  left:50;
+  top:50;
+}
+</style>
+
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://anyscript.org/"><img src="/assets/images/anyscript_logo.svg" height="200" width="180" align="top"/></a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://anyscript.org/getting-started/" >Quick-Start guide</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://anyscript.org/all-posts/" >Blog posts</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="http://forum.anyscript.org/" >Forum <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://github.com/AnyBody/support/wiki" >Wiki <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://github.com/AnyBody/" >Repositories <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            </li>
+          
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+    
+    <div id="watermark">
+<p>Draft Draft Draft<br/>Draft Draft Draft Draft<br/>Draft Draft Draft Draft Draft</p>
+    </div>
+    
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/bio-photo.jpg" alt="Bjørn Keller Jensen" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Bjørn Keller Jensen</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        Sports Science Student, Intern at AnyBody Technology
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:bkje14@student.aau.dk">
+            <meta itemprop="email" content="bkje14@student.aau.dk" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Getting the maximal strength of your model!">
+    <meta itemprop="description" content="In this post you will see how to find the maximum strength of model.">
+    <meta itemprop="datePublished" content="September 14, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Getting the maximal strength of your model!
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>When working with subject specific scaling of models, it can be a
+valuable tool to know what the strength of your model is for a given
+posture. This post will show you a way of calculating the maximal
+strength of a simple 2D arm model in various postures. The concepts
+presented can of course be extended to models involving the full body
+model or parts of it.</p>
+
+<figure>
+  <img src="/assets/images/posts/max-strength_simple-arm.png" alt="Model of a simple arm" />
+  <figcaption>Fig. 1</figcaption>
+</figure>
+
+<p>For us to do this we first need to setup an example model. The
+model is a 2D arm model comprised of an upper and lower arm segment,
+attached with 8 simple muscles (fig. 1). The model is constraint to only
+allow movement in the global x and y direction. This allows us to impose
+movements which resembles flexion and extension of the shoulder and
+elbow joint. Since we want to show a general way of calculating the
+strength, we setup four load scenarios to mimic a flexion, extension,
+push, and pull movement. Since we want to investigate maximum strength,
+we need to be sure that the muscles are recruited appropriately. This is
+done by switching to the <code>MinMax_Strict</code> muscle recruiter.</p>
+
+<p>The first step in finding the default max strength for a posture is the know the
+relationship between load and max muscle activity ($mmact$). We do this by
+implementing a parameter study to investigate the $mmact$ across a spectrum of
+loads. This is done using the AnyParamStudy class as seen below:</p>
+
+<figure class="highlight"><pre><code class="language-anyscriptdoc" data-lang="anyscriptdoc"><span></span>  <span class="kt">AnyParamStudy</span> <span class="n">StrengthEval</span> <span class="o">=</span> 
+  <span class="p">{</span>
+    <span class="n">Analysis</span> <span class="o">=</span> <span class="p">{</span><span class="kt">AnyOperation</span><span class="o">&amp;</span> <span class="n">Opr</span> <span class="o">=</span> <span class="p">..</span><span class="n">ArmStudy</span><span class="p">.</span><span class="n">InverseDynamics</span><span class="p">;};</span> 
+    <span class="n">nStep</span> <span class="o">=</span> <span class="p">{</span><span class="mi">100</span><span class="p">};</span>
+
+    <span class="kt">AnyDesVar</span> <span class="n">load</span> <span class="o">=</span> 
+    <span class="p">{</span>
+      <span class="n">Val</span> <span class="o">=</span> <span class="n">Main</span><span class="p">.</span><span class="n">ArmModel</span><span class="p">.</span><span class="n">Loads</span><span class="p">.</span><span class="n">Dumbbell</span><span class="p">.</span><span class="n">load</span><span class="p">;</span>
+      <span class="n">Min</span> <span class="o">=</span> <span class="o">-</span><span class="mi">200</span><span class="p">;</span>
+      <span class="n">Max</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="kt">AnyDesMeasure</span> <span class="n">objfun</span> <span class="o">=</span> 
+    <span class="p">{</span>
+      <span class="n">Val</span> <span class="o">=</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">Main</span><span class="p">.</span><span class="n">ArmStudy</span><span class="p">.</span><span class="n">MaxAct</span><span class="p">())</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="kt">AnyDesMeasure</span> <span class="n">maxact</span> <span class="o">=</span> 
+    <span class="p">{</span>
+      <span class="n">Val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">Main</span><span class="p">.</span><span class="n">ArmStudy</span><span class="p">.</span><span class="n">MaxAct</span><span class="p">());</span>
+    <span class="p">};</span>
+    <span class="kt">AnyDesMeasure</span> <span class="n">maxs</span> <span class="o">=</span> 
+    <span class="p">{</span>
+      <span class="n">Val</span> <span class="o">=</span> <span class="n">Main</span><span class="p">.</span><span class="n">ArmStudy</span><span class="p">.</span><span class="n">MaxStrength</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">};</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>This study runs our model through the loads defined in the $load$ variable. So, in this
+example it does 100 steps where it starts at -200 N and stops at 300 N. This
+enables us to plot the $mmact$ as a function of the load. By running the parameter
+study for all four load scenarios we end up with a graph as seen in fig.2.</p>
+
+<figure>
+  <img src="/assets/images/posts/max-strength_max_act.png" alt="Max activity as function of load" />
+  <figcaption>Fig. 2: Max activity if a function of external load</figcaption>
+</figure>
+
+<p>We can see that for very low loads there might be other factors
+affecting the relationship. If we dwell by this fact and think why this
+could be, we could infer that the influence of gravity and segment mass
+could interfere with the relationship between $load$ and $mmact$. This means
+that when applying low external loads, the important factor in $mmact$ is
+the mass of the moved segments, and the gravity imposed on these
+segments. The graph also tells us that for high loads there is a linear
+relationship between load and $mmact$, and the linear part is crossing
+through $mmact = 1$ for all scenarios. We can use this information to
+calculate the maximal strength of the model. If we look at the equation
+for a linear function it looks like this:</p>
+
+<script type="math/tex; mode=display">\begin{equation} \label{eq:1}  y = ax + \ b \end{equation}</script>
+
+<p>Where in this case y is the mmact, $x$ is the load, $a$ is the slope of the
+function, and $b$ is the intercept with the y-axis. The slope of the
+linear part can be calculated using only two points and applying the
+equation:</p>
+
+<script type="math/tex; mode=display">\begin{equation} \label{eq:1} a = \frac{(y_{2} - y_{1})}{(x_{2} - x_{1})} \end{equation}</script>
+
+<p>Now that we know the coordinates of two points and the slope, we can
+start figuring out what the load is at $mmact = 1$. For this
+we again look at equation $\ref{eq:2}$, only this time we know the slope, the point
+$\left( x_{2},y_{2} \right$, and the $y_{1}$ coordinate,
+which should be equal to 1. We are therefore interested in finding
+$x_{1}$. We rearrange equation $\ref{eq:2}$, into:</p>
+
+<script type="math/tex; mode=display">\begin{equation} \label{eq:3} x_{1} = \frac{1}{a} - \frac{y_{1}}{a} + x_{2} \end{equation}</script>
+
+<p>This allows us to evaluate what is the maximal load $x_{1}$ that
+the model can support in a given posture. To check our results, we can
+calculate the maximal strength using equation $\ref{eq:2}$ and try and implement
+that load in our model. As anticipated the $mmact$ reached 0.996, and the
+same holds across all four load scenarios.</p>
+
+<h3 id="find-the-code-on-github">Find the code on GitHub</h3>
+
+<p>The AnyScript example which shows the concepts of finding the maximum muscle
+strength is available <a href="https://github.com/AnyBody/max-muscle-strength">on
+GitHub</a>.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#muscle" class="page__taxonomy-item" rel="tag">muscle</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#strength" class="page__taxonomy-item" rel="tag">strength</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#tools" class="page__taxonomy-item" rel="tag">tools</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-09-14T00:00:00+02:00">September 14, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Getting+the+maximal+strength+of+your+model%21%20https%3A%2F%2Fanyscript.org%2Ftools%2Festimating-maximum-model-strength%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fanyscript.org%2Ftools%2Festimating-maximum-model-strength%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fanyscript.org%2Ftools%2Festimating-maximum-model-strength%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fanyscript.org%2Ftools%2Festimating-maximum-model-strength%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/tools/body-model-configurator/" class="pagination--pager" title="Body Model Configuration App
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+        
+        
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/doi_teaser.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/news/DOI/" rel="permalink">AMMR now has a DOI
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">We have added a DOI for the AMMR repository. This will help user users  communicate which version of the AMMR they are using, and make it easy to  cite the A...</p>
+  </article>
+</div>
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="https://github.com/anybody"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+      <li><a href="https://www.linkedin.com/company/anybody-technology-a-s"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 AnyBody Technology A/S. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-201751-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+
+  </body>
+</html>

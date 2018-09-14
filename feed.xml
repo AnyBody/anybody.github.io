@@ -1,4 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-09-13T14:10:45+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Body Model Configuration App</title><link href="https://anyscript.org/tools/body-model-configurator/" rel="alternate" type="text/html" title="Body Model Configuration App" /><published>2018-06-20T00:00:00+02:00</published><updated>2018-06-20T00:00:00+02:00</updated><id>https://anyscript.org/tools/body-model-configurator</id><content type="html" xml:base="https://anyscript.org/tools/body-model-configurator/">&lt;p&gt;One of the first things I did when starting to use the AnyBody Modeling
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-09-14T15:01:57+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Getting the maximal strength of your model!</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Getting the maximal strength of your model!" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
+valuable tool to know what the strength of your model is for a given
+posture. This post will show you a way of calculating the maximal
+strength of a simple 2D arm model in various postures. The concepts
+presented can of course be extended to models involving the full body
+model or parts of it.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/posts/max-strength_simple-arm.png&quot; alt=&quot;Model of a simple arm&quot; /&gt;
+  &lt;figcaption&gt;Fig. 1&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;For us to do this we first need to setup an example model. The
+model is a 2D arm model comprised of an upper and lower arm segment,
+attached with 8 simple muscles (fig. 1). The model is constraint to only
+allow movement in the global x and y direction. This allows us to impose
+movements which resembles flexion and extension of the shoulder and
+elbow joint. Since we want to show a general way of calculating the
+strength, we setup four load scenarios to mimic a flexion, extension,
+push, and pull movement. Since we want to investigate maximum strength,
+we need to be sure that the muscles are recruited appropriately. This is
+done by switching to the &lt;code&gt;MinMax_Strict&lt;/code&gt; muscle recruiter.&lt;/p&gt;
+
+&lt;p&gt;The first step in finding the default max strength for a posture is the know the
+relationship between load and max muscle activity ($mmact$). We do this by
+implementing a parameter study to investigate the $mmact$ across a spectrum of
+loads. This is done using the AnyParamStudy class as seen below:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-anyscriptdoc&quot; data-lang=&quot;anyscriptdoc&quot;&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class=&quot;kt&quot;&gt;AnyParamStudy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StrengthEval&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Analysis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;AnyOperation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Opr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmStudy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InverseDynamics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;};&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;nStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+    &lt;span class=&quot;kt&quot;&gt;AnyDesVar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Loads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dumbbell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+    &lt;span class=&quot;kt&quot;&gt;AnyDesMeasure&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;objfun&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmStudy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaxAct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;AnyDesMeasure&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxact&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmStudy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaxAct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;AnyDesMeasure&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmStudy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaxStrength&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This study runs our model through the loads defined in the $load$ variable. So, in this
+example it does 100 steps where it starts at -200 N and stops at 300 N. This
+enables us to plot the $mmact$ as a function of the load. By running the parameter
+study for all four load scenarios we end up with a graph as seen in fig.2.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/posts/max-strength_max_act.png&quot; alt=&quot;Max activity as function of load&quot; /&gt;
+  &lt;figcaption&gt;Fig. 2: Max activity if a function of external load&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;We can see that for very low loads there might be other factors
+affecting the relationship. If we dwell by this fact and think why this
+could be, we could infer that the influence of gravity and segment mass
+could interfere with the relationship between $load$ and $mmact$. This means
+that when applying low external loads, the important factor in $mmact$ is
+the mass of the moved segments, and the gravity imposed on these
+segments. The graph also tells us that for high loads there is a linear
+relationship between load and $mmact$, and the linear part is crossing
+through $mmact = 1$ for all scenarios. We can use this information to
+calculate the maximal strength of the model. If we look at the equation
+for a linear function it looks like this:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:1}  y = ax + \ b \end{equation}&lt;/script&gt;
+
+&lt;p&gt;Where in this case y is the mmact, $x$ is the load, $a$ is the slope of the
+function, and $b$ is the intercept with the y-axis. The slope of the
+linear part can be calculated using only two points and applying the
+equation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:1} a = \frac{(y_{2} - y_{1})}{(x_{2} - x_{1})} \end{equation}&lt;/script&gt;
+
+&lt;p&gt;Now that we know the coordinates of two points and the slope, we can
+start figuring out what the load is at $mmact = 1$. For this
+we again look at equation $\ref{eq:2}$, only this time we know the slope, the point
+$\left( x_{2},y_{2} \right$, and the $y_{1}$ coordinate,
+which should be equal to 1. We are therefore interested in finding
+$x_{1}$. We rearrange equation $\ref{eq:2}$, into:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:3} x_{1} = \frac{1}{a} - \frac{y_{1}}{a} + x_{2} \end{equation}&lt;/script&gt;
+
+&lt;p&gt;This allows us to evaluate what is the maximal load $x_{1}$ that
+the model can support in a given posture. To check our results, we can
+calculate the maximal strength using equation $\ref{eq:2}$ and try and implement
+that load in our model. As anticipated the $mmact$ reached 0.996, and the
+same holds across all four load scenarios.&lt;/p&gt;
+
+&lt;h3 id=&quot;find-the-code-on-github&quot;&gt;Find the code on GitHub&lt;/h3&gt;
+
+&lt;p&gt;The AnyScript example which shows the concepts of finding the maximum muscle
+strength is available &lt;a href=&quot;https://github.com/AnyBody/max-muscle-strength&quot;&gt;on
+GitHub&lt;/a&gt;.&lt;/p&gt;</content><author><name>Bjørn Keller Jensen</name><email>bkje14@student.aau.dk</email></author><category term="strength" /><category term="muscle" /><summary type="html">In this post you will see how to find the maximum strength of model.</summary></entry><entry><title type="html">Body Model Configuration App</title><link href="https://anyscript.org/tools/body-model-configurator/" rel="alternate" type="text/html" title="Body Model Configuration App" /><published>2018-06-20T00:00:00+02:00</published><updated>2018-06-20T00:00:00+02:00</updated><id>https://anyscript.org/tools/body-model-configurator</id><content type="html" xml:base="https://anyscript.org/tools/body-model-configurator/">&lt;p&gt;One of the first things I did when starting to use the AnyBody Modeling
 System, was to understand how to configure the human model. This means enabling and disabling different body parts and setting up the available options for muscles, ligaments
 etc. The model is configured via AnyScript by defining switches
 which we call Body Model (BM) statements.&lt;/p&gt;
@@ -938,71 +1042,4 @@ on specific features of the framework.&lt;/p&gt;
 &lt;p&gt;Examples are self-contained and could be locaated anywhere as long they have a
 valid reference link to where the AnyMoCap model is located on your computer.&lt;/p&gt;
 
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;</content><author><name>Morten Enemark Lund</name></author><category term="Motion Capture" /><summary type="html">Creating motion caputure based models is difficult. But this often what new users want to start out working on.</summary></entry><entry><title type="html">Notepad++ and AnyScript files</title><link href="https://anyscript.org/editors/notepad++-and-anyscript/" rel="alternate" type="text/html" title="Notepad++ and AnyScript files" /><published>2017-04-18T00:00:00+02:00</published><updated>2017-04-18T00:00:00+02:00</updated><id>https://anyscript.org/editors/notepad++-and-anyscript</id><content type="html" xml:base="https://anyscript.org/editors/notepad++-and-anyscript/">&lt;p&gt;In this post, I will show an extension to get syntax
-highlighting and code folding working for
-&lt;a href=&quot;https://notepad-plus-plus.org/&quot;&gt;Notepad++&lt;/a&gt;. This the first post in a series on using external editors with the AnyBody
-Modeling System.&lt;/p&gt;
-
-&lt;h2 id=&quot;why-another-editor&quot;&gt;Why another editor?&lt;/h2&gt;
-
-&lt;p&gt;I shall be the first to admit that the editor in the AnyBody Modeling System
-(AMS) can feel very limited at times. It does have some crucial features like
-integration with the model tree. Even though some of these functions are
-indispensable when debugging models, the features of the editor in itself are
-pretty basic.&lt;/p&gt;
-
-&lt;p&gt;So when I write, edit or format AnyScript code I look for something more
-productive. Luckily, there are much more powerful alternatives available. Maybe
-you have heard about trending editors like &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt;, &lt;a href=&quot;https://www.sublimetext.com/&quot;&gt;Sublime
-Text&lt;/a&gt;, &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;VS Code&lt;/a&gt;?
-Or perhaps a bit older options like &lt;a href=&quot;https://notepad-plus-plus.org/&quot;&gt;notepad++&lt;/a&gt;?
-All are text editors which many developers couldn’t live without.&lt;/p&gt;
-
-&lt;p&gt;Modern text editors have become popular for very good reasons. They are fast,
-lightweight, and powerful and they are not limited to a particular programming
-language like most integrated developer environments (IDE). If you ever used
-some of these powerful text editors, it can be hard to live without the features
-they provide.&lt;/p&gt;
-
-&lt;h1 id=&quot;anyscript-support-in-notepad&quot;&gt;AnyScript support in Notepad++&lt;/h1&gt;
-
-&lt;p&gt;Notepad++ was my favorite text editor for many years and I often still use it.
-It is fast and works well on Windows. To enable AnyScript support in Notepad++
-you need to the install AnyScript language extension.&lt;/p&gt;
-
-&lt;p&gt;You can find the extension on &lt;a href=&quot;https://github.com/AnyBody/notepad-plus-plus-anyscript&quot;&gt;GitHub&lt;/a&gt;,
-or download it here directly:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/AnyBody/notepad-plus-plus-anyscript/raw/master/anyscript.xml&quot; class=&quot;btn btn--success btn--large&quot;&gt;&lt;i class=&quot;fa fa-download&quot;&gt;&lt;/i&gt; Download AnyScript
-Notepad++&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Save the file &lt;code&gt;AnyScript.xml&lt;/code&gt; to your computer. Open Notepad++ and select the menu: “Language”-&amp;gt;”Define your language” and click import…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/22542671/20790053/f6378fe6-b7b6-11e6-9379-3d6b2f6f9b49.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;With the extension in place AnyScript code will highlight correctly, and braces
-will match up. And it is possible to collapse pairs of braces &lt;code&gt;{&lt;/code&gt;/&lt;code&gt;}&lt;/code&gt;, as well
-as pairs of &lt;code&gt;#if&lt;/code&gt;/&lt;code&gt;#endif&lt;/code&gt;. That is huge advantage when working with very big
-AnyScript files.&lt;/p&gt;
-
-&lt;h3 id=&quot;why-is-notepad-usefull&quot;&gt;Why is Notepad++ usefull&lt;/h3&gt;
-
-&lt;p&gt;The main benefits are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Effective search replace with regex&lt;/li&gt;
-  &lt;li&gt;Code folding&lt;/li&gt;
-  &lt;li&gt;Syntax highlighting&lt;/li&gt;
-  &lt;li&gt;Macro recording/playback&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://notepad-plus-plus.org/features/multi-editing.html&quot;&gt;Multi editing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Document map&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To really understand the power of notepad++ see this example of column mode editing:&lt;/p&gt;
-
-&lt;figure&gt;
-  
-&lt;img src=&quot;https://cloud.githubusercontent.com/assets/22542671/20789877/5b5ba2b4-b7b6-11e6-991a-1f85db8522a0.gif&quot; alt=&quot;column mode editing&quot; /&gt;
-
-  &lt;figcaption&gt;The ability to write at multiple cursors or select a column of text is fantastic.&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>Morten Enemark Lund</name></author><category term="Syntax highlighting" /><summary type="html">In this post, I will show an extension to get syntax highlighting and code folding working for Notepad++.</summary></entry></feed>
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;</content><author><name>Morten Enemark Lund</name></author><category term="Motion Capture" /><summary type="html">Creating motion caputure based models is difficult. But this often what new users want to start out working on.</summary></entry></feed>
