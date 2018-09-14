@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-09-14T15:01:57+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Getting the maximal strength of your model!</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Getting the maximal strength of your model!" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-09-14T15:19:55+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Getting the maximal strength of your model!</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Getting the maximal strength of your model!" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
 valuable tool to know what the strength of your model is for a given
 posture. This post will show you a way of calculating the maximal
 strength of a simple 2D arm model in various postures. The concepts
 presented can of course be extended to models involving the full body
 model or parts of it.&lt;/p&gt;
 
-&lt;figure&gt;
+&lt;figure class=&quot;align-right&quot; style=&quot;width: 300px&quot;&gt;
   &lt;img src=&quot;/assets/images/posts/max-strength_simple-arm.png&quot; alt=&quot;Model of a simple arm&quot; /&gt;
   &lt;figcaption&gt;Fig. 1&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -57,7 +57,7 @@ example it does 100 steps where it starts at -200 N and stops at 300 N. This
 enables us to plot the $mmact$ as a function of the load. By running the parameter
 study for all four load scenarios we end up with a graph as seen in fig.2.&lt;/p&gt;
 
-&lt;figure&gt;
+&lt;figure style=&quot;width: 80%&quot;&gt;
   &lt;img src=&quot;/assets/images/posts/max-strength_max_act.png&quot; alt=&quot;Max activity as function of load&quot; /&gt;
   &lt;figcaption&gt;Fig. 2: Max activity if a function of external load&lt;/figcaption&gt;
 &lt;/figure&gt;
