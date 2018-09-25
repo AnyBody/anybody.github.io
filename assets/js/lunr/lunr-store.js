@@ -69,8 +69,8 @@ var store = [{
         "tags": ["Model configuration","BM switches"],
         "url": "https://anyscript.org/tools/body-model-configurator/",
         "teaser":"https://anyscript.org/assets/images/posts/BM_Plugin_teaser.JPG"},{
-        "title": "Getting the maximal strength of your model!",
-        "excerpt":"When working with subject specific scaling of models, it can be avaluable tool to know what the strength of your model is for a givenposture. This post will show you a way of calculating the maximalstrength of a simple 2D arm model in various postures. The conceptspresented can of course...","categories": ["tools"],
+        "title": "Getting the maximum strength of your model!",
+        "excerpt":"When working with subject specific scaling of models, it can be avaluable tool to know what the strength of your model is for a givenposture. This post will show you a way of calculating the maximumstrength of a simple 2D arm model in various postures. The conceptspresented can of course...","categories": ["tools"],
         "tags": ["strength","muscle"],
         "url": "https://anyscript.org/tools/estimating-maximum-model-strength/",
         "teaser":"https://anyscript.org/assets/images/posts/max-strength_teaser.png"}]

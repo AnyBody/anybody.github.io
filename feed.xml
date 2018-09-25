@@ -1,30 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-09-14T15:23:03+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Getting the maximal strength of your model!</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Getting the maximal strength of your model!" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-09-25T13:57:08+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Getting the maximum strength of your model!</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Getting the maximum strength of your model!" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
 valuable tool to know what the strength of your model is for a given
-posture. This post will show you a way of calculating the maximal
+posture. This post will show you a way of calculating the maximum
 strength of a simple 2D arm model in various postures. The concepts
 presented can of course be extended to models involving the full body
 model or parts of it.&lt;/p&gt;
 
 &lt;figure class=&quot;align-right&quot; style=&quot;width: 300px&quot;&gt;
   &lt;img src=&quot;/assets/images/posts/max-strength_simple-arm.png&quot; alt=&quot;Model of a simple arm&quot; /&gt;
-  &lt;figcaption&gt;Fig. 1&lt;/figcaption&gt;
+  &lt;figcaption&gt;Fig. 1: The simple 2D arm model used in this example&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;For us to do this we first need to setup an example model. The
+&lt;p&gt;For us to do so, we first need to setup an example model. The
 model is a 2D arm model comprised of an upper and lower arm segment,
 attached with 8 simple muscles (fig. 1). The model is constraint to only
 allow movement in the global x and y direction. This allows us to impose
 movements which resembles flexion and extension of the shoulder and
-elbow joint. Since we want to show a general way of calculating the
-strength, we setup four load scenarios to mimic a flexion, extension,
-push, and pull movement. Since we want to investigate maximum strength,
-we need to be sure that the muscles are recruited appropriately. This is
+elbow joint. Further, we want to show a general way of calculating the
+strength independent of the movement, we therefore set up four load
+scenarios to mimic a flexion, extension, push, and pull movement.
+Since we want to investigate maximum strength, we need to be sure 
+that the muscles are recruited appropriately. This is
 done by switching to the &lt;code&gt;MinMax_Strict&lt;/code&gt; muscle recruiter.&lt;/p&gt;
 
-&lt;p&gt;The first step in finding the default max strength for a posture is the know the
-relationship between load and max muscle activity ($mmact$). We do this by
+&lt;p&gt;The first step in finding the default maximum strength for a posture is to know the
+relationship between load and &lt;code&gt;MaxMuscleActivity&lt;/code&gt; ($mmact$). We do this by
 implementing a parameter study to investigate the $mmact$ across a spectrum of
-loads. This is done using the AnyParamStudy class as seen below:&lt;/p&gt;
+loads. This is done using the &lt;code&gt;AnyParamStudy&lt;/code&gt; class as seen below:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-anyscriptdoc&quot; data-lang=&quot;anyscriptdoc&quot;&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class=&quot;kt&quot;&gt;AnyParamStudy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StrengthEval&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -34,35 +35,27 @@ loads. This is done using the AnyParamStudy class as seen below:&lt;/p&gt;
     &lt;span class=&quot;kt&quot;&gt;AnyDesVar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;Val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Loads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dumbbell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;Min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;Max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;250&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 
-    &lt;span class=&quot;kt&quot;&gt;AnyDesMeasure&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;objfun&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;Val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmStudy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaxAct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;AnyDesMeasure&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxact&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;Val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmStudy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaxAct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;AnyDesMeasure&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;Val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArmStudy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaxStrength&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This study runs our model through the loads defined in the $load$ variable. So, in this
-example it does 100 steps where it starts at -200 N and stops at 300 N. This
+example it does 100 steps where it starts at 0 N and stops at 250 N. This
 enables us to plot the $mmact$ as a function of the load. By running the parameter
-study for all four load scenarios we end up with a graph as seen in fig.2.&lt;/p&gt;
+study for all four load scenarios we end up with a graph as seen in fig. 2.&lt;/p&gt;
 
 &lt;figure style=&quot;width: 80%&quot;&gt;
-  &lt;img src=&quot;/assets/images/posts/max-strength_max_act.png&quot; alt=&quot;Max activity as function of load&quot; /&gt;
-  &lt;figcaption&gt;Fig. 2: Max activity if a function of external load&lt;/figcaption&gt;
+  &lt;img src=&quot;/assets/images/posts/Concentric_paramStudy.png&quot; alt=&quot;Max activity as function of load&quot; /&gt;
+  &lt;figcaption&gt;Fig. 2: Max muscle activity as a function of the load applied&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;We can see that for very low loads there might be other factors
+&lt;p&gt;We can see that for very low loads there might be other factors than the applied load
 affecting the relationship. If we dwell by this fact and think why this
 could be, we could infer that the influence of gravity and segment mass
 could interfere with the relationship between $load$ and $mmact$. This means
@@ -76,16 +69,16 @@ for a linear function it looks like this:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:1}  y = ax + \ b \end{equation}&lt;/script&gt;
 
-&lt;p&gt;Where in this case y is the mmact, $x$ is the load, $a$ is the slope of the
+&lt;p&gt;Where in this case $y$ is the mmact, $x$ is the load, $a$ is the slope of the
 function, and $b$ is the intercept with the y-axis. The slope of the
 linear part can be calculated using only two points and applying the
 equation:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:1} a = \frac{(y_{2} - y_{1})}{(x_{2} - x_{1})} \end{equation}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:2} a = \frac{(y_{2} - y_{1})}{(x_{2} - x_{1})} \end{equation}&lt;/script&gt;
 
 &lt;p&gt;Now that we know the coordinates of two points and the slope, we can
 start figuring out what the load is at $mmact = 1$. For this
-we again look at equation $\ref{eq:2}$, only this time we know the slope, the point
+we again look at equation $\ref{eq:2}$, only this time we know the slope, the point 
 $\left( x_{2},y_{2} \right$, and the $y_{1}$ coordinate,
 which should be equal to 1. We are therefore interested in finding
 $x_{1}$. We rearrange equation $\ref{eq:2}$, into:&lt;/p&gt;
@@ -94,15 +87,15 @@ $x_{1}$. We rearrange equation $\ref{eq:2}$, into:&lt;/p&gt;
 
 &lt;p&gt;This allows us to evaluate what is the maximal load $x_{1}$ that
 the model can support in a given posture. To check our results, we can
-calculate the maximal strength using equation $\ref{eq:2}$ and try and implement
-that load in our model. As anticipated the $mmact$ reached 0.996, and the
+calculate the maximal strength using equation $\ref{eq:3}$ and try and implement
+that load in our flexion model. As anticipated the $mmact$ reached 0.996, and the
 same holds across all four load scenarios.&lt;/p&gt;
 
 &lt;h3 id=&quot;find-the-code-on-github&quot;&gt;Find the code on GitHub&lt;/h3&gt;
 
 &lt;p&gt;The AnyScript example which shows the concepts of finding the maximum muscle
 strength is available &lt;a href=&quot;https://github.com/AnyBody/max-muscle-strength&quot;&gt;on
-GitHub&lt;/a&gt;.&lt;/p&gt;</content><author><name>Bjørn Keller Jensen</name><email>bkje14@student.aau.dk</email></author><category term="strength" /><category term="muscle" /><summary type="html">In this post you will see how to find the maximum strength of model.</summary></entry><entry><title type="html">Body Model Configuration App</title><link href="https://anyscript.org/tools/body-model-configurator/" rel="alternate" type="text/html" title="Body Model Configuration App" /><published>2018-06-20T00:00:00+02:00</published><updated>2018-06-20T00:00:00+02:00</updated><id>https://anyscript.org/tools/body-model-configurator</id><content type="html" xml:base="https://anyscript.org/tools/body-model-configurator/">&lt;p&gt;One of the first things I did when starting to use the AnyBody Modeling
+GitHub&lt;/a&gt;.&lt;/p&gt;</content><author><name>Bjørn Keller Jensen</name><email>bkje14@student.aau.dk</email></author><category term="strength" /><category term="muscle" /><summary type="html">In this post you will see how to find the maximum strength of your model.</summary></entry><entry><title type="html">Body Model Configuration App</title><link href="https://anyscript.org/tools/body-model-configurator/" rel="alternate" type="text/html" title="Body Model Configuration App" /><published>2018-06-20T00:00:00+02:00</published><updated>2018-06-20T00:00:00+02:00</updated><id>https://anyscript.org/tools/body-model-configurator</id><content type="html" xml:base="https://anyscript.org/tools/body-model-configurator/">&lt;p&gt;One of the first things I did when starting to use the AnyBody Modeling
 System, was to understand how to configure the human model. This means enabling and disabling different body parts and setting up the available options for muscles, ligaments
 etc. The model is configured via AnyScript by defining switches
 which we call Body Model (BM) statements.&lt;/p&gt;
