@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-09-25T13:57:08+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Getting the maximum strength of your model!</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Getting the maximum strength of your model!" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-10-02T15:12:03+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Getting the maximum strength of your model!</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Getting the maximum strength of your model!" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
 valuable tool to know what the strength of your model is for a given
 posture. This post will show you a way of calculating the maximum
 strength of a simple 2D arm model in various postures. The concepts
@@ -20,7 +20,8 @@ strength independent of the movement, we therefore set up four load
 scenarios to mimic a flexion, extension, push, and pull movement.
 Since we want to investigate maximum strength, we need to be sure 
 that the muscles are recruited appropriately. This is
-done by switching to the &lt;code&gt;MinMax_Strict&lt;/code&gt; muscle recruiter.&lt;/p&gt;
+done by switching to the &lt;code&gt;MinMax_Strict&lt;/code&gt; muscle recruiter. For more information
+on muscle recruitment in the Anybody Modelling software, se &lt;a href=&quot;https://anyscript.org/tutorials/MuscleRecruitment/index.html&quot;&gt;this tutorial&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The first step in finding the default maximum strength for a posture is to know the
 relationship between load and &lt;code&gt;MaxMuscleActivity&lt;/code&gt; ($mmact$). We do this by
@@ -52,7 +53,7 @@ study for all four load scenarios we end up with a graph as seen in fig. 2.&lt;/
 
 &lt;figure style=&quot;width: 80%&quot;&gt;
   &lt;img src=&quot;/assets/images/posts/Concentric_paramStudy.png&quot; alt=&quot;Max activity as function of load&quot; /&gt;
-  &lt;figcaption&gt;Fig. 2: Max muscle activity as a function of the load applied&lt;/figcaption&gt;
+  &lt;figcaption&gt;Fig. 2: Max muscle activity as a function of the load applied. Dashed line indicates $mmact = 1$.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;We can see that for very low loads there might be other factors than the applied load
@@ -78,8 +79,8 @@ equation:&lt;/p&gt;
 
 &lt;p&gt;Now that we know the coordinates of two points and the slope, we can
 start figuring out what the load is at $mmact = 1$. For this
-we again look at equation $\ref{eq:2}$, only this time we know the slope, the point 
-$\left( x_{2},y_{2} \right$, and the $y_{1}$ coordinate,
+we again look at equation $\ref{eq:2}$, only this time we know the slope, the point
+$( x_{2},y_{2}$, and the $y_{1}$ coordinate,
 which should be equal to 1. We are therefore interested in finding
 $x_{1}$. We rearrange equation $\ref{eq:2}$, into:&lt;/p&gt;
 
@@ -87,9 +88,43 @@ $x_{1}$. We rearrange equation $\ref{eq:2}$, into:&lt;/p&gt;
 
 &lt;p&gt;This allows us to evaluate what is the maximal load $x_{1}$ that
 the model can support in a given posture. To check our results, we can
-calculate the maximal strength using equation $\ref{eq:3}$ and try and implement
-that load in our flexion model. As anticipated the $mmact$ reached 0.996, and the
-same holds across all four load scenarios.&lt;/p&gt;
+calculate the maximal strength for our four scenarios using equation $\ref{eq:3}$ and try and implement
+the output load in our models. Table 1. shows the calculated default strengths of the models, and the $mmact$
+when applying these loads.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Movement&lt;/th&gt;
+      &lt;th&gt;Default Strength (N)&lt;/th&gt;
+      &lt;th&gt;New MMACT&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Extension&lt;/td&gt;
+      &lt;td&gt;77.08&lt;/td&gt;
+      &lt;td&gt;1.04&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Flexion&lt;/td&gt;
+      &lt;td&gt;58.93&lt;/td&gt;
+      &lt;td&gt;0.99&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Push&lt;/td&gt;
+      &lt;td&gt;83.09&lt;/td&gt;
+      &lt;td&gt;1.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Pull&lt;/td&gt;
+      &lt;td&gt;183.80&lt;/td&gt;
+      &lt;td&gt;1.00&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Now we can calculate the maximum load for any given posture!&lt;/p&gt;
 
 &lt;h3 id=&quot;find-the-code-on-github&quot;&gt;Find the code on GitHub&lt;/h3&gt;
 
