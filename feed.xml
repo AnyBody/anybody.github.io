@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-10-04T09:28:54+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Getting the maximum strength of your model!</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Getting the maximum strength of your model!" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-10-04T09:40:35+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Getting the maximum strength of your model!</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Getting the maximum strength of your model!" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
 valuable tool to know what the strength of your model is for a given
 posture. With strength we mean the maximum permissible load that the model can carry in a given posture.
 This post will show you a way of calculating the maximum
@@ -91,15 +91,41 @@ $x_{1}$. We rearrange equation $\ref{eq:2}$, into:&lt;/p&gt;
 the model can support for a given posture. To check our results, we can
 calculate the maximum strength for our four scenarios using equation $\ref{eq:3}$ and try to implement
 the output load in our models. Table 1. shows the calculated strengths of the models, and the $mmact$
-when applying these loads.&lt;/p&gt;
+when applying these loads.g&lt;/p&gt;
 
-&lt;p&gt;| Movement  | Strength (N)         | New MMACT |
-|———–|———————-|———–|
-| Extension | 77.08                | 1.04      |
-| Flexion   | 58.93                | 0.99      |
-| Push      | 83.09                | 1.00      |
-| Pull      | 183.80               | 1.00      |
-Table 1: Calculated strength and $mmact$ after applying the calculated load {:.notice}&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Movement&lt;/th&gt;
+      &lt;th&gt;Strength (N)&lt;/th&gt;
+      &lt;th&gt;New MMACT&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Extension&lt;/td&gt;
+      &lt;td&gt;77.08&lt;/td&gt;
+      &lt;td&gt;1.04&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Flexion&lt;/td&gt;
+      &lt;td&gt;58.93&lt;/td&gt;
+      &lt;td&gt;0.99&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Push&lt;/td&gt;
+      &lt;td&gt;83.09&lt;/td&gt;
+      &lt;td&gt;1.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Pull&lt;/td&gt;
+      &lt;td&gt;183.80&lt;/td&gt;
+      &lt;td&gt;1.00&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Table 1: Calculated strength and $mmact$ after applying the calculated load {:.notice}&lt;/p&gt;
 
 &lt;p&gt;Now we can calculate the maximum load for any given posture!&lt;/p&gt;
 
