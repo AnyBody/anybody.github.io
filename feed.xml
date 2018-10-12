@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-10-04T10:27:02+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Calculating maximum model strength</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Calculating maximum model strength" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-10-12T09:53:39+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Calculating maximum model strength</title><link href="https://anyscript.org/tools/estimating-maximum-model-strength/" rel="alternate" type="text/html" title="Calculating maximum model strength" /><published>2018-09-14T00:00:00+02:00</published><updated>2018-09-14T00:00:00+02:00</updated><id>https://anyscript.org/tools/estimating-maximum-model-strength</id><content type="html" xml:base="https://anyscript.org/tools/estimating-maximum-model-strength/">&lt;p&gt;When working with subject specific scaling of models, it can be a
 valuable tool to know what the strength of your model is for a given
 posture. With strength we mean the maximum permissible load that the model can carry in a given posture.
 This post will show you a way of calculating the maximum
@@ -8,7 +8,7 @@ model or parts of it.&lt;/p&gt;
 
 &lt;figure class=&quot;align-right&quot; style=&quot;width: 300px&quot;&gt;
   &lt;img src=&quot;/assets/images/posts/max-strength_simple-arm.png&quot; alt=&quot;Model of a simple arm&quot; /&gt;
-  &lt;figcaption&gt;Fig. 1: The simple 2D arm model used in this example&lt;/figcaption&gt;
+  &lt;figcaption&gt;Fig. 1: The simple 2D arm model used in this example.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;For us to do so, we first need to setup an example model. The
@@ -25,7 +25,7 @@ done by switching to the &lt;code&gt;MinMax_Strict&lt;/code&gt; muscle recruiter
 For more information on muscle recruitment in the Anybody Modelling software, se &lt;a href=&quot;https://anyscript.org/tutorials/MuscleRecruitment/index.html&quot;&gt;this tutorial.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The first step in finding the default maximum strength for a posture, is to know the
-relationship between load and &lt;code&gt;MaxMuscleActivity&lt;/code&gt; ($mmact$). We can do this by
+relationship between load and &lt;code&gt;MaxMuscleActivity&lt;/code&gt; ($m&lt;sub&gt;act&lt;/sub&gt;$). We can do this by
 implementing a parameter study to investigate the $mmact$ across a spectrum of
 loads. This is done using the &lt;code&gt;AnyParamStudy&lt;/code&gt; class as seen below:&lt;/p&gt;
 
@@ -49,7 +49,7 @@ loads. This is done using the &lt;code&gt;AnyParamStudy&lt;/code&gt; class as se
 
 &lt;p&gt;This study runs our model through the loads defined in the $load$ variable. So, in this
 example it does 100 steps where it starts at 0 N and stops at 250 N. This
-enables us to plot the $mmact$ as a function of the load. By running the parameter
+enables us to plot the $m_{act}$ as a function of the load. By running the parameter
 study for all four load scenarios we end up with a graph as seen in fig. 2.&lt;/p&gt;
 
 &lt;figure style=&quot;width: 80%&quot;&gt;
@@ -60,72 +60,69 @@ study for all four load scenarios we end up with a graph as seen in fig. 2.&lt;/
 &lt;p&gt;We can see that for very low loads there might be other factors than the applied load
 affecting the relationship. If we dwell by this fact and wonder why this
 could be, we could infer that the influence of gravity and segment mass
-could interfere with the relationship between $load$ and $mmact$. This means
-that when applying low external loads, the important factor in $mmact$ is
+could interfere with the relationship between $load$ and $m_{act}$. This means
+that when applying low external loads, the important factor in $m_{act}$ is
 the mass of the moved segments, and the gravity imposed on those
 segments. The graph also tells us that for high loads there is a linear
-relationship between load and $mmact$, and the linear part is crossing
-$mmact = 1$ for all scenarios. We can use this information to
+relationship between load and $m_{act}$, and the linear part is crossing
+$m_{act} = 1$ for all scenarios. We can use this information to
 calculate the maximum strength of the model. If we look at the equation
 for a linear function it looks like this:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:1}  y = ax + \ b \end{equation}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:1} m_{act}  = a * $load$ + \ b \end{equation}&lt;/script&gt;
 
-&lt;p&gt;Where in this case $y$ is the mmact, $x$ is the load, $a$ is the slope of the
-function, and $b$ is the intercept with the y-axis. The slope of the
-linear part can be calculated using only two points and applying the
+&lt;p&gt;Where $a$ is the slope of the function, and $b$ is the intercept with the y-axis.
+The slope of the linear part can be calculated using only two points and applying the
 equation:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:2} a = \frac{(y_{2} - y_{1})}{(x_{2} - x_{1})} \end{equation}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:2} a = \frac{(m_{act_{2}} - m_{act_{1}})}{(load_{2} - load_{1})} \end{equation}&lt;/script&gt;
 
 &lt;p&gt;Now that we know the coordinates of two points and the slope, we can
-start figuring out what the load is at $mmact = 1$. For this
+start figuring out what the load is at $m_{act} = 1$. For this
 we again look at equation $\ref{eq:2}$, only this time we know the slope, the point
-$( x_{2},y_{2})$, and the $y_{1}$ coordinate,
-which should be equal to 1. We are therefore interested in finding
-$x_{1}$. We rearrange equation $\ref{eq:2}$, into:&lt;/p&gt;
+$(load_{1},m_{act_{1}})$, and the $m_{act}$ coordinate,
+which should be equal to 1. We are therefore interested in finding the corresponding
+$load_{max}$. We rearrange equation $\ref{eq:2}$, into:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:3} x_{1} = \frac{1}{a} - \frac{y_{1}}{a} + x_{2} \end{equation}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation} \label{eq:3} load_{max} = \frac{1}{a} - \frac{m_{act_{1}}}{a} + load_{1} \end{equation}&lt;/script&gt;
 
-&lt;p&gt;This allows us to evaluate what the maximum load $x_{1}$ is, that
+&lt;p&gt;This allows us to evaluate what the maximum load $load_{max}$ is, that
 the model can support for a given posture. To check our results, we can
-calculate the maximum strength for our four scenarios using equation $\ref{eq:3}$ and try to implement
-the output load in our models. Table 1. shows the calculated strengths of the models, and the $mmact$
-when applying these loads.g&lt;/p&gt;
+calculate the maximum strength for our four scenarios using equation $\ref{eq:3}$ and try to implement the output load in our models. Table 1. shows the calculated strengths of the models, and the $m_{act}$ when applying the load_{max} values.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Movement&lt;/th&gt;
-      &lt;th&gt;Strength (N)&lt;/th&gt;
-      &lt;th&gt;New MMACT&lt;/th&gt;
+      &lt;th&gt;Load_{max} (N)&lt;/th&gt;
+      &lt;th&gt;New m_{act}&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;Extension&lt;/td&gt;
-      &lt;td&gt;77.08&lt;/td&gt;
-      &lt;td&gt;1.04&lt;/td&gt;
+      &lt;td&gt;70.97891372&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Flexion&lt;/td&gt;
-      &lt;td&gt;58.93&lt;/td&gt;
-      &lt;td&gt;0.99&lt;/td&gt;
+      &lt;td&gt;78.33099967&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Push&lt;/td&gt;
-      &lt;td&gt;83.09&lt;/td&gt;
-      &lt;td&gt;1.00&lt;/td&gt;
+      &lt;td&gt;93.43104145&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Pull&lt;/td&gt;
-      &lt;td&gt;183.80&lt;/td&gt;
-      &lt;td&gt;1.00&lt;/td&gt;
+      &lt;td&gt;113.1664796&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p class=&quot;notice&quot;&gt;Table 1: Calculated strength and $mmact$ after applying the calculated load&lt;/p&gt;
+&lt;p class=&quot;notice&quot;&gt;Table 1: Calculated load_{max} and new $m_{act}$ for each movement.&lt;/p&gt;
 
 &lt;p&gt;Now we can calculate the maximum load for any given posture!&lt;/p&gt;
 
