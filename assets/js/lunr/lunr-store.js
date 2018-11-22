@@ -73,4 +73,9 @@ var store = [{
         "excerpt":"When working with subject specific scaling of models, it can be avaluable tool to know what the strength of your model is for a givenposture. With strength we mean the maximum permissible load that the model can carry in a given posture.This post will show you a way of calculating...","categories": ["tools"],
         "tags": ["strength","muscle"],
         "url": "https://anyscript.org/tools/estimating-maximum-model-strength/",
-        "teaser":"https://anyscript.org/assets/images/posts/max-strength_teaser.png"}]
+        "teaser":"https://anyscript.org/assets/images/posts/max-strength_teaser.png"},{
+        "title": "Solving optimization problems using Python",
+        "excerpt":"The AnyBody Modeling System (AMS) provides a build-in optimizationclass AnyOptStudy, and with it you have the opportunity to solve advanced mathematical optimization problems. You can get a taste of how it works in this new tutorialOf course there can be situations were you want to do a little more than...","categories": ["tools"],
+        "tags": ["python","Optimization"],
+        "url": "https://anyscript.org/tools/Solving-Optimization-Problems-Using-Python/",
+        "teaser":"https://anyscript.org/assets/images/teaser.jpg"}]
