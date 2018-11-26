@@ -1,9 +1,9 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.11.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.14.0 by Michael Rose
   Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 <html lang="en" class="no-js">
   <head>
@@ -85,8 +85,6 @@
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="AnyScript Community Feed">
 
 <!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -110,6 +108,7 @@
     }
   </style>
 <![endif]-->
+
 
 
     <!-- start custom head snippets -->
@@ -162,37 +161,20 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <a class="site-title" href="https://anyscript.org/"><img src="/assets/images/anyscript_logo.svg" height="200" width="180" align="top"/></a>
-        <ul class="visible-links">
-          
-            
-            <li class="masthead__menu-item">
-              <a href="https://anyscript.org/getting-started/" >Quick-Start guide</a>
-            </li>
-          
-            
-            <li class="masthead__menu-item">
-              <a href="https://anyscript.org/all-posts/" >Blog posts</a>
-            </li>
-          
-            
-            <li class="masthead__menu-item">
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/getting-started/" >Quick-Start guide</a>
+            </li><li class="masthead__menu-item">
+              <a href="/all-posts/" >Blog posts</a>
+            </li><li class="masthead__menu-item">
               <a href="http://forum.anyscript.org/" >Forum <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-            </li>
-          
-            
-            <li class="masthead__menu-item">
+            </li><li class="masthead__menu-item">
               <a href="https://github.com/AnyBody/support/wiki" >Wiki <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-            </li>
-          
-            
-            <li class="masthead__menu-item">
+            </li><li class="masthead__menu-item">
               <a href="https://github.com/AnyBody/" >Repositories <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-            </li>
-          
-        </ul>
+            </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle Menu</span>
+          <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
@@ -200,6 +182,7 @@
     </div>
   </div>
 </div>
+
 
     
     
@@ -281,7 +264,7 @@
 
       
         <li>
-          <a href="https://github.com/bkje14" itemprop="sameAs">
+          <a href="https://github.com/bkje14" itemprop="sameAs" rel="nofollow noopener noreferrer">
             <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
           </a>
         </li>
@@ -315,7 +298,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -354,95 +337,97 @@
       <section class="page__content" itemprop="text">
         
         <p>The AnyBody Modeling System (AMS) provides a build-in optimization
-class <code>AnyOptStudy</code>, and with it you have the opportunity to solve advanced mathematical optimization problems. You can get a taste of how it works in this <a href="https://anyscript.org/tutorials/">new tutorial</a>
-Of course there can be situations were you want to do a little more than what the AMS optimization offers. Say you have two seperate models were you wanted to optimize some parameter across
+class <code>AnyOptStudy</code>, and with it you have the opportunity to solve advanced mathematical optimization problems.</p>
+
+<p>.. seealso:: You can get a taste of how it works in the <a href="https://anyscript.org/tutorials/Parameter_studies_and_optimization/lesson2.html">newly updated tutorial on  parameter and optimization studies</a></p>
+
+<p>Of course there can be situations were you want to do a little more than what the AMS optimization offers. Say you have two seperate models were you wanted to optimize some parameter across
 the performance in both models? or perhaps you wanted to use a specific algorithm suitable for your exact problem? To solve these kinds of problems, you
 could perform the optimization process from a third party software.</p>
 
 <p>In this post we will demonstrate how these problems can be solved using Python.
-This topic is part of the new [Anybodytutorial]
-(https://anyscript.org/tutorials/Parameter_studies_and_optimization/index.html)
-<em>Parameter Studies and Optimization</em> which describes the content of this post in
-detail. The model shown in this post is also part of the new AMS tutorial, and
-you can download and read a detailed description of it
-<a href="https://anyscript.org/tutorials/Parameter_studies_and_optimization/lesson3.html">here.</a></p>
+This topic is part a new <a href="https://anyscript.org/tutorials/Parameter_studies_and_optimization/lesson3.html">Anybody Tutorial</a> 
+which describes the content of this post in
+detail.</p>
 
 <p>As part of the post we will show how to integrate the <a href="https://docs.scipy.org/doc/scipy/reference/index.html">Scipy</a> optimization package
 <code>Scipy.optimize.minimize</code> by running the <a href="https://anyscript.org/ammr-doc/auto_examples/Sports/plot_BikeModel2D.html#sphx-glr-auto-examples-sports-plot-bikemodel2d-py">Anybody 2D bike model</a> from Python, using the AnyPyTools package.</p>
 
 <p>The process of performing optimization of AMS models through Python can be sketched in four steps:</p>
 
-<ul>
+<ol>
   <li>Defining a function to call the models using AnyPyTools and extract the designvariables</li>
   <li>Defining a objective function to be either minimized or maximized</li>
   <li>Defining the constraints and bounds of the problem</li>
   <li>Running the optimization</li>
-</ul>
+</ol>
 
-<p>And the whole python code to complete these four steps could look like this:</p>
+<p>And the whole Python code to complete these four steps could look like this:</p>
 
-<pre><code class="language-python">  
-    import math
-    import scipy
-    from anypytools import AnyPyProcess
-    from anypytools.macro_commands import Load, OperationRun, Dump SetValue
-
-
-    def run_model(saddle_height, saddle_pos, silent=False):
-        """Run the AnyBody model and return the metabolism results"""
-        macro = [
-            Load("BikeModel2D.main.any"),
-            SetValue("Main.BikeParameters.SaddleHeight", saddle_height),
-            SetValue("Main.BikeParameters.SaddlePos", saddle_pos),
-            OperationRun("Main.Study.InverseDynamics"),
-            Dump("Main.Study.Output.Pmet"),
-            Dump("Main.Study.Output.Abscissa.t"),
-        ]
-        app = AnyPyProcess(silent=silent)
-        results = app.start_macro(macro)
-        return results[0]
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span>    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="kn">import</span> <span class="nn">scipy</span>
+    <span class="kn">from</span> <span class="nn">anypytools</span> <span class="kn">import</span> <span class="n">AnyPyProcess</span>
+    <span class="kn">from</span> <span class="nn">anypytools.macro_commands</span> <span class="kn">import</span> <span class="n">Load</span><span class="p">,</span> <span class="n">OperationRun</span><span class="p">,</span> <span class="n">Dump</span> <span class="n">SetValue</span>
 
 
-    def objfun(designvars):
-        """Calculate the objective function value"""
-        saddle_height = designvars[0]
-        saddle_pos = designvars[1]
-        result = run_model(saddle_height, saddle_pos, silent=True)
-
-        if "ERROR" in result:
-            raise ValueError("Failed to run model")
-
-        pmet = scipy.integrate.trapz(result["Pmet"], result["Abscissa.t"])
-
-        return float(pmet)
-
-
-    def seat_distance_constraint(designvars):
-        """Compute contraint value which must be larger than zero"""
-        return math.sqrt(designvars[0] ** 2 + designvars[1] ** 2) - 0.66
+    <span class="k">def</span> <span class="nf">run_model</span><span class="p">(</span><span class="n">saddle_height</span><span class="p">,</span> <span class="n">saddle_pos</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Run the AnyBody model and return the metabolism results&quot;&quot;&quot;</span>
+        <span class="n">macro</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Load</span><span class="p">(</span><span class="s2">&quot;BikeModel2D.main.any&quot;</span><span class="p">),</span>
+            <span class="n">SetValue</span><span class="p">(</span><span class="s2">&quot;Main.BikeParameters.SaddleHeight&quot;</span><span class="p">,</span> <span class="n">saddle_height</span><span class="p">),</span>
+            <span class="n">SetValue</span><span class="p">(</span><span class="s2">&quot;Main.BikeParameters.SaddlePos&quot;</span><span class="p">,</span> <span class="n">saddle_pos</span><span class="p">),</span>
+            <span class="n">OperationRun</span><span class="p">(</span><span class="s2">&quot;Main.Study.InverseDynamics&quot;</span><span class="p">),</span>
+            <span class="n">Dump</span><span class="p">(</span><span class="s2">&quot;Main.Study.Output.Pmet&quot;</span><span class="p">),</span>
+            <span class="n">Dump</span><span class="p">(</span><span class="s2">&quot;Main.Study.Output.Abscissa.t&quot;</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="n">app</span> <span class="o">=</span> <span class="n">AnyPyProcess</span><span class="p">(</span><span class="n">silent</span><span class="o">=</span><span class="n">silent</span><span class="p">)</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">start_macro</span><span class="p">(</span><span class="n">macro</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 
-    constaints = {"type": "ineq", "fun": seat_distance_constraint}
-    bounds = [(0.61, 0.69), (-0.22, -0.05)]
-    initial_guess = (0.68, -0.15)
+    <span class="k">def</span> <span class="nf">objfun</span><span class="p">(</span><span class="n">designvars</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Calculate the objective function value&quot;&quot;&quot;</span>
+        <span class="n">saddle_height</span> <span class="o">=</span> <span class="n">designvars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">saddle_pos</span> <span class="o">=</span> <span class="n">designvars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">run_model</span><span class="p">(</span><span class="n">saddle_height</span><span class="p">,</span> <span class="n">saddle_pos</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-    solution = scipy.optimize.minimize(
-        objfun, initial_guess, constraints=constaints, bounds=bounds, method="SLSQP"
-    )
+        <span class="k">if</span> <span class="s2">&quot;ERROR&quot;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Failed to run model&quot;</span><span class="p">)</span>
 
-    print(solution)
-</code></pre>
+        <span class="n">pmet</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;Pmet&quot;</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;Abscissa.t&quot;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">pmet</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">seat_distance_constraint</span><span class="p">(</span><span class="n">designvars</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute contraint value which must be larger than zero&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">designvars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">designvars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.66</span>
+
+
+    <span class="n">constaints</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ineq&quot;</span><span class="p">,</span> <span class="s2">&quot;fun&quot;</span><span class="p">:</span> <span class="n">seat_distance_constraint</span><span class="p">}</span>
+    <span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">0.61</span><span class="p">,</span> <span class="mf">0.69</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.22</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">)]</span>
+    <span class="n">initial_guess</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.68</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">)</span>
+
+    <span class="n">solution</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
+        <span class="n">objfun</span><span class="p">,</span> <span class="n">initial_guess</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">constaints</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;SLSQP&quot;</span>
+    <span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span></code></pre></figure>
 
 <p>To elaborate a little on the sections, the first part defines the <code>run_model</code>
 function. This function takes in two arguments and assigns them to the
 saddleheight and saddleposition in the AMS model. The function returns the
-<code>Pmet</code> value for each timestep in the model. Details and advanced options of
-this function and it’s components can be found in the <code>AnyPyTools</code>
-<a href="https://anybody-research-group.github.io/anypytools-docs/">documentation</a>. The
-second part defines the objective function in question. This function takes in a
+<code>Pmet</code> value for each timestep in the model.</p>
+
+<p>.. seealso:: Details and advanced options of this function and it’s components can be found in the <code>AnyPyTools</code>
+             <a href="https://anybody-research-group.github.io/anypytools-docs/">documentation</a>.</p>
+
+<p>The second part defines the objective function in question. This function takes in a
 list of design variable arguments and utilizes the <code>run_model</code> function,
 afterwards it integrates the <code>Pmet</code> over the whole time series and returns the
-result. Next up, the constraints and bounds are defined. For this example only a
+result.</p>
+
+<p>Next up, the constraints and bounds are defined. For this example only a
 seat distance constraint is present. The bounds for each of the design
 variables is defined in the <code>bounds</code> variable. Lastly, the optimization process is
 performed, and here it envokes the <a href="https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html#optimize-minimize-slsqp">SLSQP</a>
@@ -547,7 +532,7 @@ build other and more advanced optimization processes upon.</p>
   
   
     <div class="page__related">
-      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
         
         
@@ -646,16 +631,27 @@ build other and more advanced optimization processes upon.</p>
     
       <li><strong>Follow:</strong></li>
     
+
     
+      
+        
+      
+        
+          <li><a href="https://www.facebook.com/groups/AnyBodyGroup/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/anybody" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-gitlab" aria-hidden="true"></i> GitLab</a></li>
+        
+      
+        
+      
+        
+      
     
-    
-      <li><a href="https://github.com/anybody"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-    
-    
-    
-      <li><a href="https://www.linkedin.com/company/anybody-technology-a-s"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
-    
-    
+
     <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
@@ -667,7 +663,7 @@ build other and more advanced optimization processes upon.</p>
 
     
   <script src="/assets/js/main.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
 
 

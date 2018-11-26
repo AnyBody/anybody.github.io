@@ -1,9 +1,9 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.11.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.14.0 by Michael Rose
   Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 <html lang="en" class="no-js">
   <head>
@@ -85,8 +85,6 @@
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="AnyScript Community Feed">
 
 <!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -110,6 +108,7 @@
     }
   </style>
 <![endif]-->
+
 
 
     <!-- start custom head snippets -->
@@ -160,37 +159,20 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <a class="site-title" href="https://anyscript.org/"><img src="/assets/images/anyscript_logo.svg" height="200" width="180" align="top"/></a>
-        <ul class="visible-links">
-          
-            
-            <li class="masthead__menu-item">
-              <a href="https://anyscript.org/getting-started/" >Quick-Start guide</a>
-            </li>
-          
-            
-            <li class="masthead__menu-item">
-              <a href="https://anyscript.org/all-posts/" >Blog posts</a>
-            </li>
-          
-            
-            <li class="masthead__menu-item">
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/getting-started/" >Quick-Start guide</a>
+            </li><li class="masthead__menu-item">
+              <a href="/all-posts/" >Blog posts</a>
+            </li><li class="masthead__menu-item">
               <a href="http://forum.anyscript.org/" >Forum <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-            </li>
-          
-            
-            <li class="masthead__menu-item">
+            </li><li class="masthead__menu-item">
               <a href="https://github.com/AnyBody/support/wiki" >Wiki <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-            </li>
-          
-            
-            <li class="masthead__menu-item">
+            </li><li class="masthead__menu-item">
               <a href="https://github.com/AnyBody/" >Repositories <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-            </li>
-          
-        </ul>
+            </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle Menu</span>
+          <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
@@ -198,6 +180,7 @@
     </div>
   </div>
 </div>
+
 
     
 
@@ -252,7 +235,7 @@
 
       
         <li>
-          <a href="https://keybase.io/mortenlund" itemprop="sameAs">
+          <a href="https://keybase.io/mortenlund" itemprop="sameAs" rel="nofollow noopener noreferrer">
             <i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase
           </a>
         </li>
@@ -266,7 +249,7 @@
 
       
         <li>
-          <a href="https://www.linkedin.com/in/biomedical" itemprop="sameAs">
+          <a href="https://www.linkedin.com/in/biomedical" itemprop="sameAs" rel="nofollow noopener noreferrer">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
           </a>
         </li>
@@ -282,7 +265,7 @@
 
       
         <li>
-          <a href="https://github.com/melund" itemprop="sameAs">
+          <a href="https://github.com/melund" itemprop="sameAs" rel="nofollow noopener noreferrer">
             <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
           </a>
         </li>
@@ -316,7 +299,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -537,7 +520,7 @@ also essential for traceability.</p>
   
   
     <div class="page__related">
-      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
         
         
@@ -602,16 +585,27 @@ also essential for traceability.</p>
     
       <li><strong>Follow:</strong></li>
     
+
     
+      
+        
+      
+        
+          <li><a href="https://www.facebook.com/groups/AnyBodyGroup/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/anybody" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-gitlab" aria-hidden="true"></i> GitLab</a></li>
+        
+      
+        
+      
+        
+      
     
-    
-      <li><a href="https://github.com/anybody"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-    
-    
-    
-      <li><a href="https://www.linkedin.com/company/anybody-technology-a-s"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
-    
-    
+
     <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
@@ -623,7 +617,7 @@ also essential for traceability.</p>
 
     
   <script src="/assets/js/main.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
 
 
