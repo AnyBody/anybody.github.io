@@ -75,7 +75,7 @@ var store = [{
         "url": "https://anyscript.org/tools/estimating-maximum-model-strength/",
         "teaser":"https://anyscript.org/assets/images/posts/max-strength_teaser.png"},{
         "title": "Solving optimization problems using Python",
-        "excerpt":"The AnyBody Modeling System (AMS) provides a build-in optimization class AnyOptStudy, and with it you have the opportunity to solve advanced mathematical optimization problems. You can get a taste of how it works in the newly updated tutorial on parameter and optimization studies Of course there can be situations were...","categories": ["tools"],
+        "excerpt":"The AnyBody Modeling System (AMS) provides a build-in optimization class AnyOptStudy, and with it you have the opportunity to solve advanced mathematical optimization problems. You can get a taste of how it works in the newly updated tutorial on parameter and optimization studies Extending the optimization Of course there can...","categories": ["tools"],
         "tags": ["python","Optimization"],
         "url": "https://anyscript.org/tools/Solving-Optimization-Problems-Using-Python/",
         "teaser":"https://anyscript.org/assets/images/teaser.jpg"}]
