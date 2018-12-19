@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-12-19T09:04:55+01:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Solving optimization problems using Python</title><link href="https://anyscript.org/tools/Solving-Optimization-Problems-Using-Python/" rel="alternate" type="text/html" title="Solving optimization problems using Python" /><published>2018-11-13T00:00:00+01:00</published><updated>2018-11-13T00:00:00+01:00</updated><id>https://anyscript.org/tools/Solving-Optimization-Problems-Using-Python</id><content type="html" xml:base="https://anyscript.org/tools/Solving-Optimization-Problems-Using-Python/">&lt;p&gt;The AnyBody Modeling System (AMS) provides a build-in optimization
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2018-12-19T09:25:54+01:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Solving optimization problems using Python</title><link href="https://anyscript.org/tools/Solving-Optimization-Problems-Using-Python/" rel="alternate" type="text/html" title="Solving optimization problems using Python" /><published>2018-11-13T00:00:00+01:00</published><updated>2018-11-13T00:00:00+01:00</updated><id>https://anyscript.org/tools/Solving-Optimization-Problems-Using-Python</id><content type="html" xml:base="https://anyscript.org/tools/Solving-Optimization-Problems-Using-Python/">&lt;p&gt;The AnyBody Modeling System (AMS) provides a build-in optimization
 class &lt;code&gt;AnyOptStudy&lt;/code&gt;, and with it you have the opportunity to solve advanced mathematical optimization problems.&lt;/p&gt;
 
 &lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;See also:&lt;/strong&gt; You can get a taste of how it works in the &lt;a href=&quot;https://anyscript.org/tutorials/Parameter_studies_and_optimization/lesson2.html&quot;&gt;newly updated tutorial on  parameter and optimization studies&lt;/a&gt;&lt;/p&gt;
@@ -10,14 +10,14 @@ the performance in both models? or perhaps you wanted to use a specific algorith
 could perform the optimization process from a third party software.&lt;/p&gt;
 
 &lt;p&gt;In this post we will demonstrate how these problems can be solved using Python.
-This topic is part a new &lt;a href=&quot;https://anyscript.org/tutorials/Parameter_studies_and_optimization/lesson3.html&quot;&gt;Anybody Tutorial&lt;/a&gt; 
+This topic is part of a new &lt;a href=&quot;https://anyscript.org/tutorials/Parameter_studies_and_optimization/lesson3.html&quot;&gt;Anybody Tutorial&lt;/a&gt;
 which describes the content of this post in
 detail.&lt;/p&gt;
 
 &lt;p&gt;As part of the post we will show how to integrate the &lt;a href=&quot;https://docs.scipy.org/doc/scipy/reference/index.html&quot;&gt;Scipy&lt;/a&gt; optimization package
 &lt;code&gt;Scipy.optimize.minimize&lt;/code&gt; by running the &lt;a href=&quot;https://anyscript.org/ammr-doc/auto_examples/Sports/plot_BikeModel2D.html#sphx-glr-auto-examples-sports-plot-bikemodel2d-py&quot;&gt;Anybody 2D bike model&lt;/a&gt; from Python, using the AnyPyTools package.&lt;/p&gt;
 
-&lt;figure class=&quot;align-center&quot; style=&quot;width: 300px&quot;&gt;
+&lt;figure class=&quot;align-center&quot; style=&quot;width: 550px&quot;&gt;
   &lt;img src=&quot;/assets/images/posts/2DBikeModel.jpg&quot; alt=&quot;2D Bike Model&quot; /&gt;
   &lt;figcaption&gt;Fig. 1: The 2D bike model used in this example and the new tutorial.&lt;/figcaption&gt;
 &lt;/figure&gt;
