@@ -56,7 +56,6 @@
 ./assets/images/intro_series/part9.png
 ./assets/images/intro_series/part9.xcf
 ./assets/images/macro_post_teaser.png
-./assets/images/mm-masthead-logo.png
 ./assets/images/og_image.jpg
 ./assets/images/people/ag.jpg
 ./assets/images/people/bkj.jpg
@@ -153,7 +152,6 @@
 ./news/ammr-2.0/index.html
 ./news/freeing-the-anybody-tutorials/index.html
 ./news/new-anyscript-site/index.html
-./package-lock.json
 ./page2/index.html
 ./page3/index.html
 ./robots.txt
