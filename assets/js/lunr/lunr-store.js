@@ -78,4 +78,9 @@ var store = [{
         "excerpt":"The AnyBody Modeling System (AMS) provides a build-in optimization class AnyOptStudy, and with it you have the opportunity to solve advanced mathematical optimization problems. See also: You can get a taste of how it works in the newly updated tutorial on parameter and optimization studies Extending the optimization Of course...","categories": ["tools"],
         "tags": ["python","Optimization"],
         "url": "https://anyscript.org/tools/Solving-Optimization-Problems-Using-Python/",
-        "teaser":"https://anyscript.org/assets/images/teaser.jpg"}]
+        "teaser":"https://anyscript.org/assets/images/teaser.jpg"},{
+        "title": "New AnyScript Forum",
+        "excerpt":"We have just launched a new forum site for the AnyScript community. The new site replaces the old forum which has served the last 10 years as a place for new and experienced users to get and give help on the AnyBody Modeling System. The old forum had served well....","categories": ["News"],
+        "tags": ["web site"],
+        "url": "https://anyscript.org/news/New-forum-system/",
+        "teaser":"https://anyscript.org/assets/images/posts/new-forum_teaser.png"}]
