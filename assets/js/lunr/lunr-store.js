@@ -60,7 +60,7 @@ var store = [{
         "url": "https://anyscript.org/news/ammr-2.0/",
         "teaser":"https://anyscript.org/assets/images/posts/ammr2_teaser.png"},{
         "title": "AMMR now has a DOI",
-        "excerpt":"Digital Object Identifiers (DOIs) are the foundation of references and metrics in the world of academia. With the release of AMMR 2.1.1 we have also added a DOI to the AnyBody Managed Model Repository (AMMR): . The DOI for the AMMR are issues by Zenodo, which is an European Open...","categories": ["news"],
+        "excerpt":"Digital Object Identifiers (DOIs) are the foundation of references and metrics in the world of academia. With the release of AMMR 2.1.1 we have also added a DOI to the AnyBody Managed Model Repository (AMMR): . The DOI for the AMMR are issues by Zenodo, which is an European Open...","categories": ["News"],
         "tags": ["AMMR","Models"],
         "url": "https://anyscript.org/news/DOI/",
         "teaser":"https://anyscript.org/assets/images/posts/doi_teaser.png"},{
