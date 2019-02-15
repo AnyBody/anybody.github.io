@@ -33,10 +33,6 @@
 
 
 
-  
-
-  
-
 
 <link rel="canonical" href="https://anyscript.org/cla/confirmation/">
 
@@ -122,22 +118,6 @@
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"/>
 
 
-<style type="text/css">
-#watermark {
-  color: #e0e0e0;
-  font-size: 200pt;
-  text-align: center;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  position: fixed;
-  min-height:50%; 
-  min-width:50%;
-  margin: 0;
-  z-index: -1;
-  left:50;
-  top:50;
-}
-</style>
 
 
 <!-- end custom head snippets -->
@@ -156,7 +136,11 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="/"><img src="/assets/images/anyscript_logo.svg" height="200" width="180" align="top"/></a>
+          
+          <a class="site-logo" href="/"><img src="/assets/images/anyscript_logo.svg" alt=""></a>
+        
+        <a class="site-title" href="/"> </a>
+        <!-- <a class="site-title" href="/"><img src="/assets/images/anyscript_logo.svg" height="200" width="180" align="top"/> </a> -->
         <ul class="visible-links"><li class="masthead__menu-item">
               <a href="/getting-started/" >Quick-Start guide</a>
             </li><li class="masthead__menu-item">
@@ -174,6 +158,13 @@
             </li><li class="masthead__menu-item">
               <a href="https://www.youtube.com/user/anybodytech" >Youtube channel <i class="fab fa-youtube" aria-hidden="true"></i></a>
             </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -245,6 +236,16 @@
     </div>
 
     
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <input type="text" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    </form>
+    <div id="results" class="results">
+        <gcse:searchresults-only></gcse:searchresults-only>    
+    </div></div>
+
+      </div>
+    
 
     <div class="page__footer">
       <footer>
@@ -291,7 +292,30 @@
   <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
 
 
+<script>
+  (function () {
+    var cx = '018147860991122944355:lwlcgdyuutq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
 
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
 
 
 
