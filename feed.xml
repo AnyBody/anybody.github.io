@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2019-02-15T13:28:26+01:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">New AnyScript Forum</title><link href="https://anyscript.org/news/New-forum-system/" rel="alternate" type="text/html" title="New AnyScript Forum" /><published>2019-02-13T00:00:00+01:00</published><updated>2019-02-13T00:00:00+01:00</updated><id>https://anyscript.org/news/New-forum-system</id><content type="html" xml:base="https://anyscript.org/news/New-forum-system/">&lt;p&gt;This week we launched a new forum site for the AnyScript community ✨ The new
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2019-02-15T14:21:05+01:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">New AnyScript Forum</title><link href="https://anyscript.org/news/New-forum-system/" rel="alternate" type="text/html" title="New AnyScript Forum" /><published>2019-02-13T00:00:00+01:00</published><updated>2019-02-13T00:00:00+01:00</updated><id>https://anyscript.org/news/New-forum-system</id><content type="html" xml:base="https://anyscript.org/news/New-forum-system/">&lt;p&gt;This week we launched a new forum site for the AnyScript community ✨ The new
 site replaces the old forum which has served the last 10 years as a place for
 new and experienced users to get and give help on the AnyBody Modeling System.&lt;/p&gt;
 
@@ -12,11 +12,9 @@ on both desktop and mobile. It has a lot of nice features:&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Conversations and not pages:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Posts structured by conversations, and not spread across multiple pages where you have to click the next page constantly. Instead, new content loads automatically. Just scroll down.&lt;/p&gt;
-
-&lt;video preload=&quot;auto&quot; width=&quot;80%&quot; poster=&quot;/assets/images/posts/new-forum_scroll.jpg&quot; style=&quot;display:block; margin: 0 auto;&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;
-    &lt;source src=&quot;/assets/images/posts/new-forum_scroll.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-&lt;/video&gt;
+&lt;p&gt;Posts structured by conversations, and not spread across multiple pages where
+you have to click the next page constantly. Instead, new content loads
+automatically. Just scroll down.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Effective search:&lt;/strong&gt;&lt;/p&gt;
 
