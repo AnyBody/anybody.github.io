@@ -13,7 +13,7 @@ var store = [{
         "excerpt":"In this post, I will show a new AnyScript template to create awesome videos of your musculoskeletal simulations with a single click. Download on GitHub Notice: You can now find the template directly in the AMMR. Include it like this: #include &quot;&lt;ANYBODY_PATH_MODELUTILS&gt;/Video/CameraClassTemplate.any&quot; Previously, I often spent hours creating videos for...","categories": ["Tips-n-Tricks"],
         "tags": ["Creating Videos"],
         "url": "https://anyscript.org/tips-n-tricks/creating-videos-from-your-simulations/",
-        "teaser":"https://anyscript.org/assets/images/teaser.jpg"},{
+        "teaser":"https://anyscript.org/assets/images/posts/video_post_teaser.png"},{
         "title": "Create Animated GIFs",
         "excerpt":"If a picture is worth a thousand words. What is the value of an animated GIF? If anyone knew the answer to this question it was Eadweard Muybridge who was an 19th century photographer and the grandfather of today’s biomechanical scientists. He used sequences of photographs to analyze human and...","categories": ["Tips-n-Tricks"],
         "tags": ["Creating Videos"],
@@ -80,7 +80,7 @@ var store = [{
         "url": "https://anyscript.org/tools/Solving-Optimization-Problems-Using-Python/",
         "teaser":"https://anyscript.org/assets/images/teaser.jpg"},{
         "title": "New AnyScript Forum",
-        "excerpt":"We have just launched a new forum site for the AnyScript community. The new site replaces the old forum which has served the last 10 years as a place for new and experienced users to get and give help on the AnyBody Modeling System. The old forum had served well....","categories": ["News"],
+        "excerpt":"This week we launched a new forum site for the AnyScript community ✨ The new site replaces the old forum which has served the last 10 years as a place for new and experienced users to get and give help on the AnyBody Modeling System. The old forum had served...","categories": ["News"],
         "tags": ["web site"],
         "url": "https://anyscript.org/news/New-forum-system/",
-        "teaser":"https://anyscript.org/assets/images/posts/new-forum_teaser.png"}]
+        "teaser":"https://anyscript.org/assets/images/posts/new-forum_teaser.svg"}]
