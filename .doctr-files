@@ -136,7 +136,6 @@
 ./assets/js/lunr/lunr.js
 ./assets/js/lunr/lunr.min.js
 ./assets/js/main.min.js
-./assets/js/plugins/jquery.ba-throttle-debounce.js
 ./assets/js/plugins/jquery.fitvids.js
 ./assets/js/plugins/jquery.greedy-navigation.js
 ./assets/js/plugins/jquery.magnific-popup.js
