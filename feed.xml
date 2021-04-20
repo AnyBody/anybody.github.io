@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.1">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2021-04-20T09:54:23+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Body Model Configuration App</title><link href="https://anyscript.org/tools/body-model-configurator/" rel="alternate" type="text/html" title="Body Model Configuration App" /><published>2019-04-04T00:00:00+02:00</published><updated>2019-04-04T00:00:00+02:00</updated><id>https://anyscript.org/tools/body-model-configurator</id><content type="html" xml:base="https://anyscript.org/tools/body-model-configurator/">&lt;p&gt;One of the first things I did when starting to use the AnyBody Modeling System,
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.1">Jekyll</generator><link href="https://anyscript.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://anyscript.org/" rel="alternate" type="text/html" /><updated>2021-04-20T09:56:55+02:00</updated><id>https://anyscript.org/feed.xml</id><title type="html">AnyScript Community</title><subtitle>A community for the users of AnyBody Modeling System and the AnyScript language.</subtitle><author><name>AnyBody Technology</name><email>sales@anybodytech.com</email></author><entry><title type="html">Body Model Configuration App</title><link href="https://anyscript.org/tools/body-model-configurator/" rel="alternate" type="text/html" title="Body Model Configuration App" /><published>2019-04-04T00:00:00+02:00</published><updated>2019-04-04T00:00:00+02:00</updated><id>https://anyscript.org/tools/body-model-configurator</id><content type="html" xml:base="https://anyscript.org/tools/body-model-configurator/">&lt;p&gt;One of the first things I did when starting to use the AnyBody Modeling System,
 was to understand how to configure the human model. This means enabling and
 disabling different body parts and setting up the available options for muscles,
 ligaments etc. The model is configured in AnyScript by defining switches which
@@ -359,16 +359,16 @@ equation:&lt;/p&gt;
 
 &lt;p&gt;Now that we know the coordinates of two points and the slope, we can
 start figuring out what the load is for an activity of 1 ( \(m_{act} = 1\) ). For this
-we again look at equation \(\ref{eq:2}\), only this time we know the slope, the point
+we again look at equation \(\eqref{eq:2}\), only this time we know the slope, the point
 $(load_{1},m_{act_{1}})\(, and the\)m_{act}$ coordinate,
 which should be equal to 1. We are therefore interested in finding the corresponding
-$load_{max}\(. We rearrange equation\)\ref{eq:2}$, into:&lt;/p&gt;
+$load_{max}\(. We rearrange equation\)\eqref{eq:2}$, into:&lt;/p&gt;
 
 \[\begin{equation} \label{eq:3} load_{max} = \frac{1}{a} - \frac{m_{act_{1}}}{a} + load_{1} \end{equation}\]
 
 &lt;p&gt;This allows us to evaluate what the maximum load \(load_{max}\) is, that
 the model can support for a given posture. To check our results, we can
-calculate the maximum strength for our four scenarios using equation \(\ref{eq:3}\) and try to implement the output load in our models. Table 1. shows the calculated strengths of the models, and the \(m_{act}\) when applying the \(load_{max}\) values.&lt;/p&gt;
+calculate the maximum strength for our four scenarios using equation \(\eqref{eq:3}\) and try to implement the output load in our models. Table 1. shows the calculated strengths of the models, and the \(m_{act}\) when applying the \(load_{max}\) values.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
