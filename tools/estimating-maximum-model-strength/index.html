@@ -851,7 +851,12 @@ GitHub</a>.</p>
 </script>
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+  <!-- MathJax.Hub.Config({
     showProcessingMessages: false,
     messageStyle: 'none',
     tex2jax: {
@@ -868,7 +873,7 @@ GitHub</a>.</p>
     'HTML-CSS': {
       imageFont: null
     }
-  });
+  }); -->
 </script>
 
 

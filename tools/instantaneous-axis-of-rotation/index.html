@@ -869,7 +869,12 @@ release of the AMMR, the class template can be downloaded from GitHub.</p>
 </script>
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+  <!-- MathJax.Hub.Config({
     showProcessingMessages: false,
     messageStyle: 'none',
     tex2jax: {
@@ -886,7 +891,7 @@ release of the AMMR, the class template can be downloaded from GitHub.</p>
     'HTML-CSS': {
       imageFont: null
     }
-  });
+  }); -->
 </script>
 
 

@@ -797,7 +797,12 @@ build other and more advanced optimization processes upon.</p>
 </script>
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+  <!-- MathJax.Hub.Config({
     showProcessingMessages: false,
     messageStyle: 'none',
     tex2jax: {
@@ -814,7 +819,7 @@ build other and more advanced optimization processes upon.</p>
     'HTML-CSS': {
       imageFont: null
     }
-  });
+  }); -->
 </script>
 
 
